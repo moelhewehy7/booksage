@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'features/splash/presentation/views/splash_view.dart';
+import 'features/splash/presentation/views/onboardingview.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const Reading());
 }
 
@@ -14,7 +15,8 @@ class Reading extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashView(),
+      theme: ThemeData.light(),
+      home: OnBoardingView(),
     );
   }
 }
