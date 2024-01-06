@@ -22,16 +22,20 @@ class _OnBoardingViewState extends State<OnBoardingView> {
   Future<void> checkOnboardingStatus() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
-      // Update state to trigger rebuild
       onboardingShown = prefs.getBool('onboardingShown') ?? true;
     });
   }
 
-// It uses SharedPreferences to retrieve a boolean value (onboardingShown)
-// stored in the device's persistent storage (like local storage) using SharedPreferences.getInstance().
+// If prefs.getBool('onboardingShown') returns null, onboardingShown will be assigned true.
+// Otherwise, it will be assigned the value retrieved from prefs.getBool('onboardingShown').
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: onboardingShown ? const OnBoardingViewBody() : const HomeView());
   }
 }
+// If onboardingShown is initially false, it will display the onboarding screen (OnBoardingViewBody()).
+// If onboardingShown is initially true, it will directly navigate to HomeView().
+// When onDone is executed, regardless of the initial value, 
+// it will update the value in SharedPreferences to false and navigate to HomeView().
+

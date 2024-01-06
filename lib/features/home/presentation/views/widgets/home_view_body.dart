@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:reading/core/utils/assets.dart';
+
+import 'customappbar.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -11,22 +14,7 @@ class HomeViewBody extends StatelessWidget {
         const SizedBox(
           height: 20,
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Image.asset(
-              AssetsData.bookSage,
-              scale: 9,
-            ),
-            IconButton(
-              icon: const Icon(
-                Icons.search,
-                size: 28,
-              ),
-              onPressed: () {},
-            )
-          ],
-        )
+        CustomAppBar()
       ],
     );
   }
