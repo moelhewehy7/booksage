@@ -1,20 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:reading/core/utils/assets.dart';
+import 'package:reading/features/home/presentation/views/widgets/listviewitem.dart';
 
-import 'customappbar.dart';
+import 'appbar.dart';
+import 'bookslistview.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return Column(
       children: [
         const SizedBox(
           height: 20,
         ),
-        CustomAppBar()
+        CustomAppBar(),
+        BooksListView(
+          height: height,
+          width: width,
+        )
       ],
     );
   }
