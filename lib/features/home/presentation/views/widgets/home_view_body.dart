@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:reading/core/utils/assets.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});

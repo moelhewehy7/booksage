@@ -27,6 +27,8 @@ class _OnBoardingViewState extends State<OnBoardingView> {
     });
   }
 
+// It uses SharedPreferences to retrieve a boolean value (onboardingShown)
+// stored in the device's persistent storage (like local storage) using SharedPreferences.getInstance().
   @override
   Widget build(BuildContext context) {
     return Scaffold(

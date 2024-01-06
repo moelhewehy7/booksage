@@ -16,6 +16,7 @@ class Reading extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.light(),
+      // ignore: prefer_const_constructors
       home: OnBoardingView(),
     );
   }
