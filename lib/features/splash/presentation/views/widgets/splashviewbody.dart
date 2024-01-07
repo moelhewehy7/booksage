@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:reading/features/onboarding/presentation/views/onboardingview.dart';
 
 import '../../../../../core/utils/assets.dart';
 
@@ -23,6 +25,7 @@ class _SplashViewbodyState extends State<SplashViewbody>
   void initState() {
     super.initState();
     initFadeAnimation();
+    navigatetoonboarding();
   }
 
   @override
@@ -92,5 +95,12 @@ class _SplashViewbodyState extends State<SplashViewbody>
       end: 1.0,
     ).animate(animationController);
     animationController.forward();
+  }
+
+  void navigatetoonboarding() {
+    Future.delayed(const Duration(seconds: 2), () {
+      Get.to(() => const OnBoardingView(),
+          transition: Transition.fadeIn, duration: Duration(milliseconds: 800));
+    });
   }
 }
