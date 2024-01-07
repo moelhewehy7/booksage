@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:reading/features/splash/presentation/views/splashview.dart';
 
-import 'features/splash/presentation/views/onboardingview.dart';
+import 'features/onboarding/presentation/views/onboardingview.dart';
 
 void main() async {
   runApp(const Reading());
@@ -18,7 +19,7 @@ class Reading extends StatelessWidget {
       theme:
           ThemeData.light().copyWith(textTheme: GoogleFonts.robotoTextTheme()),
       // ignore: prefer_const_constructors
-      home: OnBoardingView(),
+      home: SplashView(),
     );
   }
 }

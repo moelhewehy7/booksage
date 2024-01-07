@@ -3,4 +3,5 @@ class AssetsData {
   static const illustrationsecond = "assets/gifs/gif2.gif";
   static const illustrationthird = "assets/gifs/gif3.gif";
   static const bookSage = "assets/images/booksage5.png";
+  static const logo = "assets/images/booksage4.png";
 }
