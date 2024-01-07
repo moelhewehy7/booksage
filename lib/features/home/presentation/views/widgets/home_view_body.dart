@@ -4,6 +4,7 @@ import 'package:reading/constants.dart';
 import 'package:reading/core/utils/assets.dart';
 import 'package:reading/core/utils/styles.dart';
 import 'appbar.dart';
+import 'bestsellerlistviewitem.dart';
 import 'bookslistview.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -37,7 +38,7 @@ class HomeViewBody extends StatelessWidget {
             children: [
               const Text(
                 "Best Seller",
-                style: Styles.textStyle18,
+                style: Styles.textStyle30,
               ),
               const SizedBox(
                 height: 20,
@@ -50,56 +51,6 @@ class HomeViewBody extends StatelessWidget {
           ),
         )
       ],
-    );
-  }
-}
-
-class BestsellerlistViewItem extends StatelessWidget {
-  const BestsellerlistViewItem(
-      {super.key, required this.height, required this.width});
-  final double height, width;
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 160,
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            width: width * 0.25,
-            height: height * 0.3,
-            decoration: BoxDecoration(
-                color: kprimarycolor, borderRadius: BorderRadius.circular(6)),
-            child: Image.asset(
-              AssetsData.logo,
-              scale: 12,
-            ),
-          ),
-          const Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "Harry Potter book asdasdasd ",
-                style: Styles.textStyle20,
-              ),
-              Text(
-                "j.k. rowling ",
-                style: Styles.textStyle14,
-              ),
-              Text(
-                "harry potter book asdasdasd ",
-                style: Styles.textStyle14,
-              ),
-              Row(
-                children: [
-                  Text("19.9"),
-                ],
-              )
-            ],
-          )
-        ],
-      ),
     );
   }
 }
