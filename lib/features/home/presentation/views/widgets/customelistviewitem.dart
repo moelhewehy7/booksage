@@ -18,9 +18,9 @@ class CustomeListViewItem extends StatelessWidget {
       decoration: BoxDecoration(
         // image: DecorationImage(image: ),
         color: Colors.blue,
-        borderRadius: BorderRadius.circular(20), // Adjust the radius as needed
+        borderRadius: BorderRadius.circular(6), // Adjust the radius as needed
       ),
-      child: Center(
+      child: const Center(
         child: Text(
           'Rounded Container',
           style: TextStyle(color: Colors.white),

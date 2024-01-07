@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'listviewitem.dart';
+import 'booklistviewitem.dart';
 
 class BooksListView extends StatelessWidget {
   const BooksListView({super.key, required this.width, required this.height});
@@ -14,7 +14,7 @@ class BooksListView extends StatelessWidget {
             color: Colors.grey.withOpacity(0.5), // Shadow color
             spreadRadius: 0.00001,
             blurRadius: 50,
-            offset: Offset(5, 25),
+            offset: const Offset(5, 25),
           ),
         ],
       ),
@@ -25,7 +25,7 @@ class BooksListView extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           return Padding(
             padding: const EdgeInsets.only(left: 10, top: 6),
-            child: ListViewItem(width: width, height: height),
+            child: BookListViewItem(width: width, height: height),
           );
         },
       ),

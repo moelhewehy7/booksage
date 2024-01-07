@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:reading/features/onboarding/presentation/views/onboardingview.dart';
@@ -6,7 +5,7 @@ import 'package:reading/features/onboarding/presentation/views/onboardingview.da
 import '../../../../../core/utils/assets.dart';
 
 class SplashViewbody extends StatefulWidget {
-  const SplashViewbody({Key? key}) : super(key: key);
+  const SplashViewbody({super.key});
 
   @override
   State<SplashViewbody> createState() => _SplashViewbodyState();
@@ -100,7 +99,8 @@ class _SplashViewbodyState extends State<SplashViewbody>
   void navigatetoonboarding() {
     Future.delayed(const Duration(seconds: 2), () {
       Get.to(() => const OnBoardingView(),
-          transition: Transition.fadeIn, duration: Duration(milliseconds: 800));
+          transition: Transition.fadeIn,
+          duration: const Duration(milliseconds: 800));
     });
   }
 }

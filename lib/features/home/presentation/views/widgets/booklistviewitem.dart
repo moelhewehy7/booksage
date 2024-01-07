@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ListViewItem extends StatelessWidget {
-  const ListViewItem({
+class BookListViewItem extends StatelessWidget {
+  const BookListViewItem({
     super.key,
     required this.width,
     required this.height,
@@ -18,9 +18,9 @@ class ListViewItem extends StatelessWidget {
       decoration: BoxDecoration(
         // image: DecorationImage(image: ),
         color: Colors.brown,
-        borderRadius: BorderRadius.circular(20), // Adjust the radius as needed
+        borderRadius: BorderRadius.circular(6), // Adjust the radius as needed
       ),
-      child: Center(
+      child: const Center(
         child: Text(
           'Rounded Container',
           style: TextStyle(color: Colors.white),
