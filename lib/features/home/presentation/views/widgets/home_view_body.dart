@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:reading/constants.dart';
-import 'package:reading/core/utils/assets.dart';
 import 'package:reading/core/utils/styles.dart';
 import 'appbar.dart';
 import 'bestsellerlistviewitem.dart';
@@ -32,13 +29,13 @@ class HomeViewBody extends StatelessWidget {
           height: 20,
         ),
         Padding(
-          padding: const EdgeInsets.only(left: 16),
+          padding: const EdgeInsets.only(left: 16, right: 16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
                 "Best Seller",
-                style: Styles.textStyle30,
+                style: Styles.textStyle25,
               ),
               const SizedBox(
                 height: 20,

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../../constants.dart';
 import '../../../../../core/utils/assets.dart';
 import '../../../../../core/utils/styles.dart';
+import 'bookrating.dart';
 
 class BestsellerlistViewItem extends StatelessWidget {
   const BestsellerlistViewItem(
@@ -12,54 +14,49 @@ class BestsellerlistViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 160,
+      height: 140,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            width: width * 0.25,
-            height: height * 0.3,
+            width: width * 0.20,
+            height: height * 0.16,
             decoration: BoxDecoration(
                 color: kprimarycolor, borderRadius: BorderRadius.circular(6)),
             child: Image.asset(
               AssetsData.logo,
-              scale: 12,
+              scale: 9,
             ),
           ),
-          SizedBox(
-            width: 25,
+          const SizedBox(
+            width: 10,
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "Harry Potter book asdasdasd ",
-                maxLines: 2,
-                style: Styles.textStyle20.copyWith(fontWeight: FontWeight.bold),
-              ),
-              SizedBox(
-                height: 6,
-              ),
-              Text(
-                "J.K. Rowling ",
-                style: Styles.textStyle14,
-              ),
-              SizedBox(
-                height: 6,
-              ),
-              Text(
-                "harry potter book asdasdasd ",
-                style: Styles.textStyle14,
-              ),
-              SizedBox(
-                height: 6,
-              ),
-              Row(
-                children: [
-                  Text("19.9"),
-                ],
-              )
-            ],
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text(
+                  "Harry Potter book a afas fass dfs ffsdasdasd ",
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 2,
+                  style: Styles.textStyle20,
+                ),
+                const Text(
+                  "J.K. Rowling ",
+                  style: Styles.textStyle14,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("19.9€",
+                        style: GoogleFonts.getFont('Roboto',
+                            textStyle: Styles.textStyle20)),
+                    const BookRating()
+                  ],
+                )
+              ],
+            ),
           )
         ],
       ),

@@ -14,8 +14,8 @@ class Reading extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      theme:
-          ThemeData.light().copyWith(textTheme: GoogleFonts.robotoTextTheme()),
+      theme: ThemeData.light()
+          .copyWith(textTheme: GoogleFonts.robotoSlabTextTheme()),
       // ignore: prefer_const_constructors
       home: SplashView(),
     );
