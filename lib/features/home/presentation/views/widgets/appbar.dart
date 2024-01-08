@@ -9,9 +9,11 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: Row(
+    return SliverAppBar(
+      automaticallyImplyLeading: false,
+      pinned: true,
+      elevation: 0,
+      title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Image.asset(
@@ -23,8 +25,10 @@ class CustomAppBar extends StatelessWidget {
               FontAwesomeIcons.magnifyingGlass,
               size: 28,
             ),
-            onPressed: () {},
-          )
+            onPressed: () {
+              // Add your search functionality here
+            },
+          ),
         ],
       ),
     );

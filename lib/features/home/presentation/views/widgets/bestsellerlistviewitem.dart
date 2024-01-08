@@ -14,18 +14,19 @@ class BestsellerlistViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 140,
+      height: height * 0.16,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
+            padding: EdgeInsets.zero,
             width: width * 0.20,
             height: height * 0.16,
             decoration: BoxDecoration(
                 color: kprimarycolor, borderRadius: BorderRadius.circular(6)),
             child: Image.asset(
               AssetsData.logo,
-              scale: 9,
+              scale: 8,
             ),
           ),
           const SizedBox(
@@ -47,11 +48,14 @@ class BestsellerlistViewItem extends StatelessWidget {
                   style: Styles.textStyle14,
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text("19.9€",
-                        style: GoogleFonts.getFont('Roboto',
-                            textStyle: Styles.textStyle20)),
+                        textAlign: TextAlign.justify,
+                        style: GoogleFonts.robotoSlab(
+                            textStyle: Styles.textStyle20.copyWith())),
+                    Spacer(
+                      flex: 1,
+                    ),
                     const BookRating()
                   ],
                 )
