@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 import 'package:reading/features/onboarding/presentation/views/onboardingview.dart';
 
+import '../../../../../core/utils/app_router.dart';
 import '../../../../../core/utils/assets.dart';
 
 class SplashViewbody extends StatefulWidget {
@@ -98,9 +99,10 @@ class _SplashViewbodyState extends State<SplashViewbody>
 
   void navigatetoonboarding() {
     Future.delayed(const Duration(seconds: 2), () {
-      Get.to(() => const OnBoardingView(),
-          transition: Transition.fadeIn,
-          duration: const Duration(milliseconds: 800));
+      GoRouter.of(context).push(AppRouter.kOnBoardingView);
     });
   }
 }
+// Get.to(() => const OnBoardingView(),
+      //     transition: Transition.fadeIn,
+      //     duration: const Duration(milliseconds: 800));

@@ -52,7 +52,8 @@ class BestsellerlistViewItem extends StatelessWidget {
                     Text("19.9€",
                         textAlign: TextAlign.justify,
                         style: GoogleFonts.robotoSlab(
-                            textStyle: Styles.textStyle20.copyWith())),
+                            textStyle: Styles.textStyle20
+                                .copyWith(letterSpacing: 1.3))),
                     Spacer(
                       flex: 1,
                     ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:reading/core/utils/app_router.dart';
 import 'package:reading/core/utils/assets.dart';
-import 'package:reading/features/home/presentation/views/home_view.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../../../constants.dart';
@@ -83,6 +83,7 @@ class OnBoardingViewBody extends StatelessWidget {
   void onDone(context) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setBool('onboardingShown', false);
-    Get.off(() => const HomeView());
+
+    GoRouter.of(context).push(AppRouter.kHomeView);
   }
 }
