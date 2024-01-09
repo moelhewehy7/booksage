@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:reading/core/utils/styles.dart';
-import 'appbar.dart';
 import 'bestsellerlistview.dart';
 import 'bookslistview.dart';
 
@@ -14,7 +13,7 @@ class HomeViewBody extends StatelessWidget {
     return CustomScrollView(
       physics: const BouncingScrollPhysics(),
       slivers: [
-        const CustomAppBar(),
+        const SliverAppBar(),
         SliverToBoxAdapter(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
