@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
+import 'package:reading/core/utils/app_router.dart';
 import 'package:reading/core/utils/assets.dart';
 
 class CustomSliverAppBar extends StatelessWidget {
@@ -26,7 +28,7 @@ class CustomSliverAppBar extends StatelessWidget {
               size: 28,
             ),
             onPressed: () {
-              // Add your search functionality here
+              GoRouter.of(context).push(AppRouter.ksearchview);
             },
           ),
         ],
