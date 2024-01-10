@@ -2,8 +2,8 @@ import 'package:flutter/widgets.dart';
 
 import 'bestsellerlistviewitem.dart';
 
-class BestSellerListView extends StatelessWidget {
-  const BestSellerListView(
+class BestSellerSliverList extends StatelessWidget {
+  const BestSellerSliverList(
       {super.key, required this.height, required this.width});
   final double height, width;
   @override
@@ -14,7 +14,7 @@ class BestSellerListView extends StatelessWidget {
       (BuildContext context, int index) {
         return Padding(
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
-          child: BestsellerlistViewItem(height: height, width: width),
+          child: BestSellerSliverListItem(height: height, width: width),
         );
       },
       childCount: 20,

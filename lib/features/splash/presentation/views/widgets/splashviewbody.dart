@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:reading/features/onboarding/presentation/views/onboardingview.dart';
-
 import '../../../../../core/utils/app_router.dart';
 import '../../../../../core/utils/assets.dart';
 

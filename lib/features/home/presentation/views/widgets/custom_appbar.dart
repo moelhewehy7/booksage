@@ -12,7 +12,7 @@ class CustomAppBar extends StatelessWidget {
           onTap: () {
             // Handle back button press
           },
-          child: Padding(
+          child: const Padding(
             padding: EdgeInsets.zero, // Adjust padding as needed
             child: Icon(Icons.keyboard_backspace, size: 30),
           ),
@@ -21,7 +21,7 @@ class CustomAppBar extends StatelessWidget {
           onTap: () {
             // Handle cart button press
           },
-          child: Padding(
+          child: const Padding(
             padding: EdgeInsets.zero, // Adjust padding as needed
             child: Icon(Icons.shopping_cart, size: 30),
           ),

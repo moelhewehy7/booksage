@@ -13,8 +13,8 @@ class BookListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: width * 0.35,
-      height: height * 0.3,
+      width: width,
+      height: height,
       decoration: BoxDecoration(
         // image: DecorationImage(image: ),
         color: Colors.brown,
@@ -23,7 +23,10 @@ class BookListViewItem extends StatelessWidget {
       child: const Center(
         child: Text(
           'Rounded Container',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(
+            color: Colors.white,
+          ),
+          textAlign: TextAlign.center,
         ),
       ),
     );

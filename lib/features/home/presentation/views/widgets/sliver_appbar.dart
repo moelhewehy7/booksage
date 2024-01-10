@@ -5,7 +5,6 @@ import 'package:reading/core/utils/assets.dart';
 class CustomSliverAppBar extends StatelessWidget {
   const CustomSliverAppBar({
     super.key,
-    required bool automaticallyImplyLeading,
   });
 
   @override

@@ -9,11 +9,13 @@ class CustomButton extends StatelessWidget {
       required this.color,
       required this.textcolor,
       required this.fontSize,
-      required this.letterSpacing});
+      required this.letterSpacing,
+      required this.foregroundColor});
   final void Function()? onPressed;
   final String string;
   final BorderRadius borderRadius;
   final Color color;
+  final Color foregroundColor;
   final Color textcolor;
   final double fontSize;
   final double letterSpacing;
@@ -23,17 +25,17 @@ class CustomButton extends StatelessWidget {
       height: 48,
       child: TextButton(
         onPressed: onPressed,
+        style: TextButton.styleFrom(
+            foregroundColor: foregroundColor,
+            backgroundColor: color,
+            shape: RoundedRectangleBorder(borderRadius: borderRadius)),
         child: Text(
-          "$string",
+          string,
           style: TextStyle(
               color: textcolor,
               fontSize: fontSize,
               letterSpacing: letterSpacing),
         ),
-        style: TextButton.styleFrom(
-            backgroundColor: color,
-            shape: RoundedRectangleBorder(
-                borderRadius: borderRadius ?? BorderRadius.circular(12))),
       ),
     );
   }

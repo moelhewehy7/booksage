@@ -8,8 +8,8 @@ import '../../../../../core/utils/assets.dart';
 import '../../../../../core/utils/styles.dart';
 import 'bookrating.dart';
 
-class BestsellerlistViewItem extends StatelessWidget {
-  const BestsellerlistViewItem(
+class BestSellerSliverListItem extends StatelessWidget {
+  const BestSellerSliverListItem(
       {super.key, required this.height, required this.width});
   final double height, width;
 
@@ -60,7 +60,7 @@ class BestsellerlistViewItem extends StatelessWidget {
                           style: GoogleFonts.robotoSlab(
                               textStyle: Styles.textStyle20
                                   .copyWith(letterSpacing: 1.3))),
-                      Spacer(
+                      const Spacer(
                         flex: 1,
                       ),
                       const BookRating()

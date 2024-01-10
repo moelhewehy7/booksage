@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:reading/core/utils/styles.dart';
-import 'bestsellerlistview.dart';
+import 'package:reading/features/home/presentation/views/widgets/sliver_appbar.dart';
+import 'bestsellersliverlist.dart';
 import 'bookslistview.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -13,7 +14,7 @@ class HomeViewBody extends StatelessWidget {
     return CustomScrollView(
       physics: const BouncingScrollPhysics(),
       slivers: [
-        const SliverAppBar(),
+        const CustomSliverAppBar(),
         SliverToBoxAdapter(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -32,13 +33,10 @@ class HomeViewBody extends StatelessWidget {
                   style: Styles.textStyle25,
                 ),
               ),
-              const SizedBox(
-                height: 20,
-              ),
             ],
           ),
         ),
-        BestSellerListView(height: height, width: width)
+        BestSellerSliverList(height: height, width: width)
       ],
     );
   }

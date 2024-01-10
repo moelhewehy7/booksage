@@ -8,6 +8,7 @@ class BooksListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: height * 0.3,
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
@@ -18,14 +19,14 @@ class BooksListView extends StatelessWidget {
           ),
         ],
       ),
-      height: height * 0.3,
       child: ListView.builder(
+        padding: const EdgeInsets.only(left: 5, right: 5),
         itemCount: 10,
         scrollDirection: Axis.horizontal,
         itemBuilder: (BuildContext context, int index) {
           return Padding(
-            padding: const EdgeInsets.only(left: 10, top: 6),
-            child: BookListViewItem(width: width, height: height),
+            padding: const EdgeInsets.only(left: 5, top: 6),
+            child: BookListViewItem(width: width * 0.35, height: height * 0.3),
           );
         },
       ),
