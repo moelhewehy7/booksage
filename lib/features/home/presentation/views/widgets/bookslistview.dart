@@ -20,7 +20,7 @@ class BooksListView extends StatelessWidget {
         ],
       ),
       child: ListView.builder(
-        padding: const EdgeInsets.only(left: 5, right: 5),
+        padding: const EdgeInsets.only(left: 10, right: 10),
         itemCount: 10,
         scrollDirection: Axis.horizontal,
         itemBuilder: (BuildContext context, int index) {

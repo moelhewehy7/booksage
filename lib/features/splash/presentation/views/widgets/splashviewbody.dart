@@ -102,5 +102,5 @@ class _SplashViewbodyState extends State<SplashViewbody>
   }
 }
 // Get.to(() => const OnBoardingView(),
-      //     transition: Transition.fadeIn,
-      //     duration: const Duration(milliseconds: 800));
+//     transition: Transition.fadeIn,
+//     duration: const Duration(milliseconds: 800));

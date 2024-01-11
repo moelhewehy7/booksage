@@ -36,6 +36,5 @@ class _OnBoardingViewState extends State<OnBoardingView> {
 }
 // If onboardingShown is initially false, it will display the onboarding screen (OnBoardingViewBody()).
 // If onboardingShown is initially true, it will directly navigate to HomeView().
-// When onDone is executed, regardless of the initial value, 
+// When onDone is executed, regardless of the initial value,
 // it will update the value in SharedPreferences to false and navigate to HomeView().
-
