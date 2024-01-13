@@ -24,7 +24,11 @@ class PaddedBooksDetailedColumn extends StatelessWidget {
           const SizedBox(
             height: 40,
           ),
-          const CustomAppBar(),
+          CustomAppBar(
+            ontap: () {
+              Navigator.of(context).pop();
+            },
+          ),
           const SizedBox(
             height: 8,
           ),

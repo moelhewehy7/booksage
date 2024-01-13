@@ -15,8 +15,15 @@ class _SearchViewState extends State<SearchView> {
     double height = MediaQuery.of(context).size.height;
 
     return Scaffold(
+        appBar: AppBar(
+          leading: IconButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              icon: Icon(Icons.arrow_back)),
+        ),
         body: SafeArea(
-      child: SearchViewBody(height: height, width: width),
-    ));
+          child: SearchViewBody(height: height, width: width),
+        ));
   }
 }
