@@ -6,10 +6,10 @@ import 'searchresultlistview.dart';
 
 class SearchViewBody extends StatelessWidget {
   const SearchViewBody({
-    Key? key,
+    super.key,
     required this.height,
     required this.width,
-  }) : super(key: key);
+  });
 
   final double height, width;
 
@@ -20,11 +20,11 @@ class SearchViewBody extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CustomTextField(),
-          SizedBox(
+          const CustomTextField(),
+          const SizedBox(
             height: 10,
           ),
-          Text(
+          const Text(
             "Search Result",
             style: Styles.textStyle18,
           ),

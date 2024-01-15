@@ -6,12 +6,14 @@ import 'package:reading/features/home/data/models/book_model/book_model.dart';
 import 'package:reading/features/home/data/repos/home_repo.dart';
 
 class HomeRepoImpel implements HomeRepo {
-  final Dio dio = Dio();
+  final ApiService apiService;
+
+  HomeRepoImpel(this.apiService);
 
   @override
   Future<Either<Failure, List<BookModel>>> fetchNewstBooks() async {
     try {
-      var data = await ApiService().get(
+      var data = await apiService.get(
           endpoint:
               'volumes?Filtering=free-ebooks&Sorting=newest&q=subject:programming');
       List<dynamic> bookslist = data["items"];
@@ -31,8 +33,8 @@ class HomeRepoImpel implements HomeRepo {
   @override
   Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
     try {
-      var data = await ApiService()
-          .get(endpoint: 'volumes?Filtering=free-ebooks&q=subject:programming');
+      var data = await apiService.get(
+          endpoint: 'volumes?Filtering=free-ebooks&q=subject:programming');
       List<dynamic> bookslist = data["items"];
       List<BookModel> books = [];
       for (var item in bookslist) {

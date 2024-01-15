@@ -14,12 +14,12 @@ class CustomTextField extends StatelessWidget {
           color: Colors.white), // Set the color of the user input text
       decoration: InputDecoration(
         hintText: "Search ",
-        hintStyle: TextStyle(color: Colors.white), // Hint text color
+        hintStyle: const TextStyle(color: Colors.white), // Hint text color
         prefixIcon: const Icon(Icons.search, color: Colors.white),
         border: defaultborder(),
         focusedBorder: focusedborder(),
         filled: true,
-        fillColor: Color(0xFF947064),
+        fillColor: const Color(0xFF947064),
       ),
     );
   }

@@ -20,7 +20,7 @@ class _SearchViewState extends State<SearchView> {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              icon: Icon(Icons.arrow_back)),
+              icon: const Icon(Icons.arrow_back)),
         ),
         body: SafeArea(
           child: SearchViewBody(height: height, width: width),

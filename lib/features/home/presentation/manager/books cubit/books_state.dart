@@ -20,5 +20,5 @@ final class BooksFailure extends BooksState {
 final class BooksSuccess extends BooksState {
   final List<BookModel> books;
 
-  BooksSuccess({required this.books});
+  const BooksSuccess({required this.books});
 }
