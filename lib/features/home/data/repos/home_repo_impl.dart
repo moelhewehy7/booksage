@@ -22,9 +22,9 @@ class HomeRepoImpel implements HomeRepo {
         books.add(BookModel.fromJson(item));
       }
       return right(books);
-    } on Exception catch (e) {
+    } catch (e) {
       if (e is DioException) {
-        left(ServerFailure.fromDioException(e));
+        return left(ServerFailure.fromDioException(e));
       }
       return left(ServerFailure(e.toString()));
     }
@@ -41,7 +41,10 @@ class HomeRepoImpel implements HomeRepo {
         books.add(BookModel.fromJson(item));
       }
       return right(books);
-    } on Exception catch (e) {
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioException(e));
+      }
       return left(ServerFailure(e.toString()));
     }
   }

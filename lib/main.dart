@@ -21,7 +21,8 @@ class Reading extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => BooksCubit(getIt.get<HomeRepoImpel>()),
+          create: (context) =>
+              BooksCubit(getIt.get<HomeRepoImpel>())..fetchBooks(),
         ),
         BlocProvider(
           create: (context) => NewestBooksCubit(getIt.get<HomeRepoImpel>()),

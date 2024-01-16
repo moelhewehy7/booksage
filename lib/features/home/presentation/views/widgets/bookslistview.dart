@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:reading/core/utils/widgets/custom_error.dart';
+import 'package:reading/features/home/presentation/manager/books%20cubit/books_cubit.dart';
+import 'package:reading/features/home/presentation/views/widgets/shimmerbooklistviewitem.dart';
+import 'package:shimmer/shimmer.dart';
 
 import 'booklistviewitem.dart';
 
@@ -7,28 +12,59 @@ class BooksListView extends StatelessWidget {
   final double width, height;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: height * 0.3,
-      decoration: BoxDecoration(
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.5), // Shadow color
-            spreadRadius: 0.00001,
-            blurRadius: 50,
-            offset: const Offset(5, 25),
+    return BlocBuilder<BooksCubit, BooksState>(builder: (context, state) {
+      if (state is BooksSuccess) {
+        return Container(
+          height: height * 0.3,
+          decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.5), // Shadow color
+                spreadRadius: 0.00001,
+                blurRadius: 50,
+                offset: const Offset(5, 25),
+              ),
+            ],
           ),
-        ],
-      ),
-      child: ListView.builder(
-        padding: const EdgeInsets.only(left: 10, right: 10),
-        itemCount: 10,
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (BuildContext context, int index) {
-          return Padding(
-            padding: const EdgeInsets.only(left: 5, top: 6),
-            child: BookListViewItem(width: width * 0.35, height: height * 0.3),
-          );
-        },
+          child: ListView.builder(
+            padding: const EdgeInsets.only(left: 10, right: 10),
+            itemCount: 10,
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (BuildContext context, int index) {
+              return Padding(
+                padding: const EdgeInsets.only(left: 5, top: 6),
+                child:
+                    BookListViewItem(width: width * 0.35, height: height * 0.3),
+              );
+            },
+          ),
+        );
+      } else if (state is BooksFailure) {
+        return Center(child: CustomError(errormessage: state.errMessage));
+      } else {
+        return shimmer();
+      }
+    });
+  }
+
+  Shimmer shimmer() {
+    return Shimmer.fromColors(
+      baseColor: const Color(0xFFE0E0E0),
+      highlightColor: const Color(0xFFF5F5F5),
+      child: SizedBox(
+        height: height * 0.3,
+        child: ListView.builder(
+          padding: const EdgeInsets.only(left: 10, right: 10),
+          itemCount: 10,
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (BuildContext context, int index) {
+            return Padding(
+              padding: const EdgeInsets.only(left: 5, top: 6),
+              child: ShimmerBookListViewItem(
+                  width: width * 0.35, height: height * 0.3),
+            );
+          },
+        ),
       ),
     );
   }
