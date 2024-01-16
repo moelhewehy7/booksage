@@ -14,27 +14,20 @@ class BooksListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<BooksCubit, BooksState>(builder: (context, state) {
       if (state is BooksSuccess) {
-        return Container(
+        return SizedBox(
           height: height * 0.3,
-          decoration: BoxDecoration(
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.withOpacity(0.5), // Shadow color
-                spreadRadius: 0.00001,
-                blurRadius: 50,
-                offset: const Offset(5, 25),
-              ),
-            ],
-          ),
           child: ListView.builder(
-            padding: const EdgeInsets.only(left: 10, right: 10),
-            itemCount: 10,
+            padding: const EdgeInsets.only(left: 6, right: 10),
+            itemCount: state.books.length,
             scrollDirection: Axis.horizontal,
-            itemBuilder: (BuildContext context, int index) {
+            itemBuilder: (BuildContext context, int i) {
               return Padding(
-                padding: const EdgeInsets.only(left: 5, top: 6),
-                child:
-                    BookListViewItem(width: width * 0.35, height: height * 0.3),
+                padding: const EdgeInsets.only(left: 2, top: 6),
+                child: BookListViewItem(
+                  width: width * 0.35,
+                  height: height * 0.3,
+                  imageurl: state.books[i].volumeInfo.imageLinks.thumbnail,
+                ),
               );
             },
           ),
@@ -54,12 +47,12 @@ class BooksListView extends StatelessWidget {
       child: SizedBox(
         height: height * 0.3,
         child: ListView.builder(
-          padding: const EdgeInsets.only(left: 10, right: 10),
-          itemCount: 10,
+          padding: const EdgeInsets.only(left: 6, right: 10),
+          itemCount: 5,
           scrollDirection: Axis.horizontal,
           itemBuilder: (BuildContext context, int index) {
             return Padding(
-              padding: const EdgeInsets.only(left: 5, top: 6),
+              padding: const EdgeInsets.only(left: 2, top: 6),
               child: ShimmerBookListViewItem(
                   width: width * 0.35, height: height * 0.3),
             );

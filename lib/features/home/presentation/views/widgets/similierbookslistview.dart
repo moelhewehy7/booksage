@@ -17,7 +17,12 @@ class SimilierBooksListView extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           return Padding(
             padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 2),
-            child: BookListViewItem(height: height, width: width * 0.2),
+            child: BookListViewItem(
+              height: height,
+              width: width * 0.2,
+              imageurl:
+                  'https://th.bing.com/th/id/OIP.oIMc9xwV8JnZmekIxz8KYwHaIc?rs=1&pid=ImgDetMain',
+            ),
           );
         },
       ),
