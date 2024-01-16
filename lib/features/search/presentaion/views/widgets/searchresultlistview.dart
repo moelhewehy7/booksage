@@ -20,7 +20,7 @@ class SearchResultListView extends StatelessWidget {
           padding: const EdgeInsets.symmetric(
             vertical: 5,
           ),
-          child: BestSellerSliverListItem(height: height, width: width),
+          // child: BestSellerSliverListItem(height: height, width: width, bookModel: null,),
         );
       },
     );

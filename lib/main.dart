@@ -25,7 +25,8 @@ class Reading extends StatelessWidget {
               BooksCubit(getIt.get<HomeRepoImpel>())..fetchBooks(),
         ),
         BlocProvider(
-          create: (context) => NewestBooksCubit(getIt.get<HomeRepoImpel>()),
+          create: (context) =>
+              NewestBooksCubit(getIt.get<HomeRepoImpel>())..fetchnewestBooks(),
         ),
       ],
       child: MaterialApp.router(

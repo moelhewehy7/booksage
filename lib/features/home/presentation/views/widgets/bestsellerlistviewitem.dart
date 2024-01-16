@@ -2,17 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:reading/core/utils/app_router.dart';
+import 'package:reading/features/home/data/models/book_model/book_model.dart';
 
 import '../../../../../constants.dart';
-import '../../../../../core/utils/assets.dart';
 import '../../../../../core/utils/styles.dart';
 import 'bookrating.dart';
 
 class BestSellerSliverListItem extends StatelessWidget {
   const BestSellerSliverListItem(
-      {super.key, required this.height, required this.width});
+      {super.key,
+      required this.height,
+      required this.width,
+      required this.bookmodel});
   final double height, width;
-
+  final BookModel bookmodel;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -30,9 +33,9 @@ class BestSellerSliverListItem extends StatelessWidget {
               height: height * 0.16,
               decoration: BoxDecoration(
                   color: kprimarycolor, borderRadius: BorderRadius.circular(6)),
-              child: Image.asset(
-                AssetsData.logo,
-                scale: 8,
+              child: Image.network(
+                bookmodel.volumeInfo.imageLinks.thumbnail,
+                fit: BoxFit.fill,
               ),
             ),
             const SizedBox(
@@ -43,27 +46,27 @@ class BestSellerSliverListItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
-                    "Harry Potter book a afas fass dfs ffsdasdasd ",
+                  Text(
+                    bookmodel.volumeInfo.title!,
                     overflow: TextOverflow.ellipsis,
                     maxLines: 2,
                     style: Styles.textStyle20,
                   ),
-                  const Text(
-                    "J.K. Rowling ",
+                  Text(
+                    bookmodel.volumeInfo.authors![0],
                     style: Styles.textStyle14,
                   ),
                   Row(
                     children: [
-                      Text("19.9€",
+                      Text("Free",
                           textAlign: TextAlign.justify,
                           style: GoogleFonts.robotoSlab(
-                              textStyle: Styles.textStyle20
-                                  .copyWith(letterSpacing: 1.3))),
+                              textStyle:
+                                  Styles.textStyle20.copyWith(fontSize: 20))),
                       const Spacer(
                         flex: 1,
                       ),
-                      const BookRating()
+                      BookRating(bookModel: bookmodel)
                     ],
                   )
                 ],

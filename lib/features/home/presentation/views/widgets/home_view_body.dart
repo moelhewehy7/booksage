@@ -12,6 +12,7 @@ class HomeViewBody extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return CustomScrollView(
+      scrollDirection: Axis.vertical,
       physics: const BouncingScrollPhysics(),
       slivers: [
         const CustomSliverAppBar(),
@@ -29,14 +30,14 @@ class HomeViewBody extends StatelessWidget {
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16),
                 child: Text(
-                  "Best Seller",
-                  style: Styles.textStyle25,
+                  "Newest Books",
+                  style: Styles.textStyle20,
                 ),
               ),
             ],
           ),
         ),
-        BestSellerSliverList(height: height, width: width)
+        NewestBooksSliverList(height: height, width: width)
       ],
     );
   }

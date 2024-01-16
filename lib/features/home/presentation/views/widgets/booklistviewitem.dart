@@ -1,6 +1,5 @@
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 
 class BookListViewItem extends StatelessWidget {
   const BookListViewItem({
@@ -40,8 +39,8 @@ class BookListViewItem extends StatelessWidget {
                 case LoadState.failed:
                   return const Icon(Icons.error);
                 case LoadState.loading:
-                  return Center(child: const CircularProgressIndicator());
               }
+              return null;
             },
           ),
         ),

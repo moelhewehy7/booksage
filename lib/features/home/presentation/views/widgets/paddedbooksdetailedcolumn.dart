@@ -49,7 +49,6 @@ class PaddedBooksDetailedColumn extends StatelessWidget {
           const SizedBox(
             height: 1,
           ),
-          const BookRating(),
           const SizedBox(
             height: 4,
           ),
