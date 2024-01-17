@@ -11,20 +11,20 @@ class ServerFailure extends Failure {
   factory ServerFailure.fromDioException(DioException dioException) {
     switch (dioException.type) {
       case DioExceptionType.connectionTimeout:
-        return ServerFailure("connection timeout with serverapi");
+        return ServerFailure("Connection timeout with serverapi");
       case DioExceptionType.sendTimeout:
-        return ServerFailure("sendTimeout timeout with serverapi");
+        return ServerFailure("Send Timeout timeout with serverapi");
       case DioExceptionType.receiveTimeout:
         return ServerFailure("receive timeout with serverapi");
       case DioExceptionType.badCertificate:
-        return ServerFailure("badCertificate  with serverapi");
+        return ServerFailure("bad Certificate  with serverapi");
       case DioExceptionType.badResponse:
         return ServerFailure.fromResponse(
             dioException.response!.statusCode, dioException.response!.data);
       case DioExceptionType.cancel:
-        return ServerFailure("connection timeout with serverapi");
+        return ServerFailure("Connection timeout with serverapi");
       case DioExceptionType.connectionError:
-        return ServerFailure("connection Error  with serverapi");
+        return ServerFailure("There is no internet Connection");
       case DioExceptionType.unknown:
         if (dioException.message!.contains('SocketException')) {
           return ServerFailure('No Internet Connection');

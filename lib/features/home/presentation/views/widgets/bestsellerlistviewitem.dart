@@ -4,8 +4,6 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:reading/core/utils/app_router.dart';
 import 'package:reading/features/home/data/models/book_model/book_model.dart';
-
-import '../../../../../constants.dart';
 import '../../../../../core/utils/styles.dart';
 import 'bookrating.dart';
 
@@ -33,7 +31,7 @@ class BestSellerSliverListItem extends StatelessWidget {
               width: width * 0.20,
               height: height * 0.16,
               decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 232, 232, 232),
+                  color: const Color.fromARGB(255, 232, 232, 232),
                   borderRadius: BorderRadius.circular(6)),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(6),
