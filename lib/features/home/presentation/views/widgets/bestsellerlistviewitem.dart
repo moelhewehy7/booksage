@@ -36,7 +36,7 @@ class BestSellerSliverListItem extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(6),
                 child: ExtendedImage.network(
-                  bookmodel.volumeInfo.imageLinks.thumbnail,
+                  bookmodel.volumeInfo.imageLinks?.thumbnail ?? "",
                   fit: BoxFit.fill,
                   cache: true,
                   loadStateChanged: (ExtendedImageState state) {
@@ -66,10 +66,10 @@ class BestSellerSliverListItem extends StatelessWidget {
                     maxLines: 2,
                     style: Styles.textStyle20,
                   ),
-                  Text(
-                    bookmodel.volumeInfo.authors![0],
-                    style: Styles.textStyle14,
-                  ),
+                  Text(bookmodel.volumeInfo.authors![0],
+                      style: Styles.textStyle14,
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 1),
                   Row(
                     children: [
                       Text("Free",
@@ -80,7 +80,10 @@ class BestSellerSliverListItem extends StatelessWidget {
                       const Spacer(
                         flex: 1,
                       ),
-                      BookRating(bookModel: bookmodel)
+                      BookRating(
+                        rating: bookmodel.volumeInfo.averageRating ?? 0,
+                        count: bookmodel.volumeInfo.ratingsCount ?? 0,
+                      )
                     ],
                   )
                 ],

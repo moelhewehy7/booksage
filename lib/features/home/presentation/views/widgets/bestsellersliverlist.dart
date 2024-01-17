@@ -36,7 +36,10 @@ class NewestBooksSliverList extends StatelessWidget {
           ));
         } else if (state is NewestBooksFailure) {
           return SliverToBoxAdapter(
-              child: CustomError(errormessage: state.errMessage));
+              child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                  child: CustomError(errormessage: state.errMessage)));
         } else {
           return SliverList(
             delegate: SliverChildBuilderDelegate(

@@ -14,12 +14,15 @@ class HomeRepoImpel implements HomeRepo {
   Future<Either<Failure, List<BookModel>>> fetchNewstBooks() async {
     try {
       var data = await apiService.get(
-          endpoint:
-              "volumes?Filtering=free-ebooks&Sorting=newest&q=subject:programming");
+          endpoint: "volumes?Filtering=free-ebooks&Sorting=newest&q=general");
       List<dynamic> bookslist = data["items"];
       List<BookModel> books = [];
       for (var item in bookslist) {
-        books.add(BookModel.fromJson(item));
+        try {
+          books.add(BookModel.fromJson(item));
+        } catch (e) {
+          books.add(BookModel.fromJson(item));
+        }
       }
       return right(books);
     } catch (e) {
