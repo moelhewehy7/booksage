@@ -89,13 +89,13 @@ class ShimmerBestSellerSliverListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Shimmer.fromColors(
-      baseColor: const Color(0xFFE0E0E0),
-      highlightColor: const Color(0xFFF5F5F5),
-      child: GestureDetector(
-        onTap: () {
-          // Handle tap on shimmer item
-        },
+    return GestureDetector(
+      onTap: () {
+        // Handle tap on shimmer item
+      },
+      child: Shimmer.fromColors(
+        baseColor: const Color(0xFFE0E0E0),
+        highlightColor: const Color(0xFFF5F5F5),
         child: SizedBox(
           height: height * 0.16,
           child: Row(

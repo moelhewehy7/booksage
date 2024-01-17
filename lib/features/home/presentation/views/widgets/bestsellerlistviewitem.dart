@@ -1,3 +1,4 @@
+import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -32,10 +33,25 @@ class BestSellerSliverListItem extends StatelessWidget {
               width: width * 0.20,
               height: height * 0.16,
               decoration: BoxDecoration(
-                  color: kprimarycolor, borderRadius: BorderRadius.circular(6)),
-              child: Image.network(
-                bookmodel.volumeInfo.imageLinks.thumbnail,
-                fit: BoxFit.fill,
+                  color: Color.fromARGB(255, 232, 232, 232),
+                  borderRadius: BorderRadius.circular(6)),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(6),
+                child: ExtendedImage.network(
+                  bookmodel.volumeInfo.imageLinks.thumbnail,
+                  fit: BoxFit.fill,
+                  cache: true,
+                  loadStateChanged: (ExtendedImageState state) {
+                    switch (state.extendedImageLoadState) {
+                      case LoadState.completed:
+                        return state.completedWidget;
+                      case LoadState.failed:
+                        return const Icon(Icons.error);
+                      case LoadState.loading:
+                    }
+                    return null;
+                  },
+                ),
               ),
             ),
             const SizedBox(

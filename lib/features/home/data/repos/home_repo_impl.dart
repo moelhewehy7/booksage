@@ -15,7 +15,7 @@ class HomeRepoImpel implements HomeRepo {
     try {
       var data = await apiService.get(
           endpoint:
-              'volumes?Filtering=free-ebooks&Sorting=newest&q=subject:programming');
+              "volumes?Filtering=free-ebooks&Sorting=newest&q=subject:programming");
       List<dynamic> bookslist = data["items"];
       List<BookModel> books = [];
       for (var item in bookslist) {
