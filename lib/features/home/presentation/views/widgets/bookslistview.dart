@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:reading/core/utils/widgets/custom_error.dart';
 import 'package:reading/features/home/presentation/manager/books%20cubit/books_cubit.dart';
 import 'package:reading/features/home/presentation/views/widgets/shimmerbooklistviewitem.dart';
-import 'package:shimmer/shimmer.dart';
 
 import 'booklistviewitem.dart';
 

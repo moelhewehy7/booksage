@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:reading/features/home/presentation/manager/similar%20books%20cubit/similiar_books_cubit.dart';
+import '../../../../../core/utils/widgets/custom_error.dart';
 import 'booklistviewitem.dart';
+import 'shimmersimilierlistview.dart';
 
 class SimilierBooksListView extends StatelessWidget {
   const SimilierBooksListView(
@@ -8,24 +11,40 @@ class SimilierBooksListView extends StatelessWidget {
   final double height, width;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: height * 0.17,
-      child: ListView.builder(
-        padding: const EdgeInsets.only(left: 15, right: 15),
-        scrollDirection: Axis.horizontal,
-        itemCount: 10,
-        itemBuilder: (BuildContext context, int index) {
-          return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 2),
-            child: BookListViewItem(
-              height: height,
-              width: width * 0.2,
-              imageurl:
-                  'https://th.bing.com/th/id/OIP.oIMc9xwV8JnZmekIxz8KYwHaIc?rs=1&pid=ImgDetMain',
+    return BlocBuilder<SimiliarBooksCubit, SimiliarBooksState>(
+      builder: (context, state) {
+        if (state is SimiliarBooksSuccess) {
+          return SizedBox(
+            height: height * 0.17,
+            child: ListView.builder(
+              padding: const EdgeInsets.only(left: 15, right: 15),
+              scrollDirection: Axis.horizontal,
+              itemCount: 10,
+              itemBuilder: (BuildContext context, int index) {
+                return Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 2),
+                  child: BookListViewItem(
+                    height: height,
+                    width: width * 0.2,
+                    imageurl:
+                        'https://th.bing.com/th/id/OIP.oIMc9xwV8JnZmekIxz8KYwHaIc?rs=1&pid=ImgDetMain',
+                  ),
+                );
+              },
             ),
           );
-        },
-      ),
+        } else if (state is SimiliarBooksFailure) {
+          return Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+              child: CustomError(errormessage: state.errMessage));
+        } else {
+          return ShimmerSimilierBookListView(
+            height: height,
+            width: width,
+          );
+        }
+      },
     );
   }
 }

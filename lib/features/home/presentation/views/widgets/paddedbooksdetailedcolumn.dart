@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:reading/core/utils/styles.dart';
-import 'package:reading/features/home/data/models/book_model/book_model.dart';
 import 'package:reading/features/home/presentation/views/widgets/booksactionbutton.dart';
 import 'package:reading/features/home/presentation/views/widgets/custom_appbar.dart';
 
