@@ -6,6 +6,8 @@ import '../../../../core/errors/failures.dart';
 abstract class HomeRepo {
   Future<Either<Failure, List<BookModel>>> fetchNewstBooks();
   Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks();
+  Future<Either<Failure, List<BookModel>>> fetchSimilarBooks(
+      {required String categry});
 }
 // The Repository Pattern in Flutter is a software design pattern 
 // that abstracts the logic that retrieves data

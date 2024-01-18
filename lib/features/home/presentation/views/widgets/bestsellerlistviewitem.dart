@@ -19,7 +19,8 @@ class BestSellerSliverListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRouter.kbookdetailesview);
+        GoRouter.of(context)
+            .push(AppRouter.kbookdetailesview, extra: bookmodel);
       },
       child: SizedBox(
         height: height * 0.16,
@@ -61,12 +62,14 @@ class BestSellerSliverListItem extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    bookmodel.volumeInfo.title!,
+                    bookmodel.volumeInfo.title ?? "Title not available",
                     overflow: TextOverflow.ellipsis,
                     maxLines: 2,
                     style: Styles.textStyle20,
                   ),
-                  Text(bookmodel.volumeInfo.authors![0],
+                  Text(
+                      bookmodel.volumeInfo.authors?[0] ??
+                          "Author not available",
                       style: Styles.textStyle14,
                       overflow: TextOverflow.ellipsis,
                       maxLines: 1),

@@ -14,7 +14,7 @@ class HomeRepoImpel implements HomeRepo {
   Future<Either<Failure, List<BookModel>>> fetchNewstBooks() async {
     try {
       var data = await apiService.get(
-          endpoint: "volumes?Filtering=free-ebooks&Sorting=newest&q=general");
+          endpoint: "volumes?Filtering=free-ebooks&Sorting=newest&q=New");
       List<dynamic> bookslist = data["items"];
       List<BookModel> books = [];
       for (var item in bookslist) {
@@ -38,6 +38,27 @@ class HomeRepoImpel implements HomeRepo {
     try {
       var data = await apiService.get(
           endpoint: 'volumes?Filtering=free-ebooks&q=subject:programming');
+      List<dynamic> bookslist = data["items"];
+      List<BookModel> books = [];
+      for (var item in bookslist) {
+        books.add(BookModel.fromJson(item));
+      }
+      return right(books);
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioException(e));
+      }
+      return left(ServerFailure(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<BookModel>>> fetchSimilarBooks(
+      {required String categry}) async {
+    try {
+      var data = await apiService.get(
+          endpoint:
+              'volumes?Filtering=free-ebooks&Sorting=relevance&q=subject:programming');
       List<dynamic> bookslist = data["items"];
       List<BookModel> books = [];
       for (var item in bookslist) {
