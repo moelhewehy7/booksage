@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'PaddedBooksDetailedColumn.dart';
+import 'package:reading/features/home/data/models/book_model/book_model.dart';
+import 'paddedbooksdetailedcolumn.dart';
 import 'similierbookslistview.dart';
 
 class BookDetailesViewBody extends StatelessWidget {
-  const BookDetailesViewBody({super.key});
-
+  const BookDetailesViewBody({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -15,7 +16,11 @@ class BookDetailesViewBody extends StatelessWidget {
             hasScrollBody: false,
             child: Column(
               children: [
-                PaddedBooksDetailedColumn(height: height, width: width),
+                BooksDetailedColumn(
+                  height: height,
+                  width: width,
+                  book: bookModel,
+                ),
                 Expanded(
                   child: SimilierBooksListView(
                     height: height,

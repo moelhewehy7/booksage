@@ -20,9 +20,7 @@ class HomeRepoImpel implements HomeRepo {
       for (var item in bookslist) {
         try {
           books.add(BookModel.fromJson(item));
-        } catch (e) {
-          books.add(BookModel.fromJson(item));
-        }
+        } catch (e) {}
       }
       return right(books);
     } catch (e) {
@@ -41,7 +39,9 @@ class HomeRepoImpel implements HomeRepo {
       List<dynamic> bookslist = data["items"];
       List<BookModel> books = [];
       for (var item in bookslist) {
-        books.add(BookModel.fromJson(item));
+        try {
+          books.add(BookModel.fromJson(item));
+        } catch (e) {}
       }
       return right(books);
     } catch (e) {
@@ -58,11 +58,13 @@ class HomeRepoImpel implements HomeRepo {
     try {
       var data = await apiService.get(
           endpoint:
-              'volumes?Filtering=free-ebooks&Sorting=relevance&q=subject:programming');
+              'volumes?Filtering=free-ebooks&Sorting=relevance&q=subject:$categry');
       List<dynamic> bookslist = data["items"];
       List<BookModel> books = [];
       for (var item in bookslist) {
-        books.add(BookModel.fromJson(item));
+        try {
+          books.add(BookModel.fromJson(item));
+        } catch (e) {}
       }
       return right(books);
     } catch (e) {

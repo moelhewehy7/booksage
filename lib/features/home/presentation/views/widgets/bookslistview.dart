@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:reading/core/utils/app_router.dart';
 import 'package:reading/core/utils/widgets/custom_error.dart';
 import 'package:reading/features/home/presentation/manager/books%20cubit/books_cubit.dart';
 import 'package:reading/features/home/presentation/views/widgets/shimmerbooklistviewitem.dart';
@@ -22,11 +24,17 @@ class BooksListView extends StatelessWidget {
             itemBuilder: (BuildContext context, int i) {
               return Padding(
                 padding: const EdgeInsets.only(left: 2, top: 6),
-                child: BookListViewItem(
-                  width: width * 0.35,
-                  height: height * 0.3,
-                  imageurl:
-                      state.books[i].volumeInfo.imageLinks?.thumbnail ?? "",
+                child: GestureDetector(
+                  onTap: () {
+                    GoRouter.of(context).push(AppRouter.kbookdetailesview,
+                        extra: state.books[i]);
+                  },
+                  child: BookListViewItem(
+                    width: width * 0.35,
+                    height: height * 0.3,
+                    imageurl:
+                        state.books[i].volumeInfo.imageLinks?.thumbnail ?? "",
+                  ),
                 ),
               );
             },

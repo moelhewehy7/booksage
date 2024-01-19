@@ -19,8 +19,8 @@ class SimilierBooksListView extends StatelessWidget {
             child: ListView.builder(
               padding: const EdgeInsets.only(left: 15, right: 15),
               scrollDirection: Axis.horizontal,
-              itemCount: 10,
-              itemBuilder: (BuildContext context, int index) {
+              itemCount: state.books.length,
+              itemBuilder: (BuildContext context, int i) {
                 return Padding(
                   padding:
                       const EdgeInsets.symmetric(vertical: 10, horizontal: 2),
@@ -28,7 +28,7 @@ class SimilierBooksListView extends StatelessWidget {
                     height: height,
                     width: width * 0.2,
                     imageurl:
-                        'https://th.bing.com/th/id/OIP.oIMc9xwV8JnZmekIxz8KYwHaIc?rs=1&pid=ImgDetMain',
+                        state.books[i].volumeInfo.imageLinks?.thumbnail ?? "",
                   ),
                 );
               },

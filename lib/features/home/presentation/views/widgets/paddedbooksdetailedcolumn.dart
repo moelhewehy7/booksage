@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:reading/core/utils/styles.dart';
+import 'package:reading/features/home/data/models/book_model/book_model.dart';
+import 'package:reading/features/home/presentation/views/widgets/bookrating.dart';
 import 'package:reading/features/home/presentation/views/widgets/booksactionbutton.dart';
 import 'package:reading/features/home/presentation/views/widgets/custom_appbar.dart';
 
-class PaddedBooksDetailedColumn extends StatelessWidget {
-  const PaddedBooksDetailedColumn({
-    super.key,
-    required this.height,
-    required this.width,
-  });
+class BooksDetailedColumn extends StatelessWidget {
+  const BooksDetailedColumn(
+      {super.key,
+      required this.height,
+      required this.width,
+      required this.book});
 
   final double height;
   final double width;
-
+  final BookModel book;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -31,18 +33,26 @@ class PaddedBooksDetailedColumn extends StatelessWidget {
           const SizedBox(
             height: 8,
           ),
-          const Text(
-            "The Jungle Book",
+          Text(
+            book.volumeInfo.title ?? "Title not available",
             style: Styles.textStyle25,
           ),
           const SizedBox(
             height: 2,
           ),
-          const Padding(
+          Padding(
             padding: EdgeInsets.only(left: 3),
-            child: Text(
-              "By Rudyard Kipling",
-              style: Styles.textStyle16,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  book.volumeInfo.authors?[0] ?? "Author not available",
+                  style: Styles.textStyle16,
+                ),
+                BookRating(
+                    rating: book.volumeInfo.averageRating ?? 0,
+                    count: book.volumeInfo.ratingsCount ?? 0)
+              ],
             ),
           ),
           const SizedBox(
@@ -55,12 +65,18 @@ class PaddedBooksDetailedColumn extends StatelessWidget {
             height: height * .50,
             width: width * .90,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8), color: Colors.brown),
+              image: DecorationImage(
+                  image: NetworkImage(
+                    book.volumeInfo.imageLinks?.thumbnail ?? "",
+                  ),
+                  fit: BoxFit.fill),
+              borderRadius: BorderRadius.circular(8),
+            ),
           ),
           const SizedBox(
             height: 15,
           ),
-          const BooksActionButton(),
+          BooksActionButton(bookmodel: book),
           const SizedBox(
             height: 20,
           ),
