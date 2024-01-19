@@ -1,3 +1,4 @@
+import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:reading/core/utils/styles.dart';
 import 'package:reading/features/home/data/models/book_model/book_model.dart';
@@ -65,12 +66,26 @@ class BooksDetailedColumn extends StatelessWidget {
             height: height * .50,
             width: width * .90,
             decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: NetworkImage(
-                    book.volumeInfo.imageLinks?.thumbnail ?? "",
-                  ),
-                  fit: BoxFit.fill),
+              color: const Color.fromARGB(255, 231, 231, 231),
               borderRadius: BorderRadius.circular(8),
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(6),
+              child: ExtendedImage.network(
+                book.volumeInfo.imageLinks?.thumbnail ?? "",
+                fit: BoxFit.fill,
+                cache: true,
+                loadStateChanged: (ExtendedImageState state) {
+                  switch (state.extendedImageLoadState) {
+                    case LoadState.completed:
+                      return state.completedWidget;
+                    case LoadState.failed:
+                      return const Icon(Icons.error);
+                    case LoadState.loading:
+                  }
+                  return null;
+                },
+              ),
             ),
           ),
           const SizedBox(
