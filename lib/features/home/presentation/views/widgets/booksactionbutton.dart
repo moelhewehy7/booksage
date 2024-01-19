@@ -30,7 +30,7 @@ class BooksActionButton extends StatelessWidget {
             borderRadius: const BorderRadius.only(
                 topRight: Radius.circular(12),
                 bottomRight: Radius.circular(12)),
-            string: 'Preview',
+            string: gettext(bookmodel),
             onPressed: () async {
               Uri uri = Uri.parse(bookmodel.volumeInfo.previewLink!);
 
@@ -54,5 +54,13 @@ class BooksActionButton extends StatelessWidget {
         )
       ],
     );
+  }
+
+  String gettext(BookModel bookModel) {
+    if (bookmodel.volumeInfo.previewLink == null) {
+      return "Preview Not Available";
+    } else {
+      return "Preview Available";
+    }
   }
 }
