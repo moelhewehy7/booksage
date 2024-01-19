@@ -14,8 +14,8 @@ class SearchResultListView extends StatelessWidget {
     return ListView.builder(
       itemCount: 20, // Change this to the actual number of items
       itemBuilder: (BuildContext context, int index) {
-        return Padding(
-          padding: const EdgeInsets.symmetric(
+        return const Padding(
+          padding: EdgeInsets.symmetric(
             vertical: 5,
           ),
           // child: BestSellerSliverListItem(height: height, width: width, bookModel: null,),

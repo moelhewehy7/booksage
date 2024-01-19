@@ -41,7 +41,7 @@ class BooksDetailedColumn extends StatelessWidget {
             height: 2,
           ),
           Padding(
-            padding: EdgeInsets.only(left: 3),
+            padding: const EdgeInsets.only(left: 3),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
