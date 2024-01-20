@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:reading/constants.dart';
+import '../../../../home/presentation/manager/search cubit/search_cubit.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
@@ -9,7 +11,9 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      onFieldSubmitted: (value) async {},
+      onChanged: (value) {
+        BlocProvider.of<SearchCubit>(context).fetchBookbysearch(book: value);
+      },
       style: const TextStyle(
           color: Colors.white), // Set the color of the user input text
       decoration: InputDecoration(

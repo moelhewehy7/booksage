@@ -8,11 +8,12 @@ import '../../../../../core/utils/styles.dart';
 import 'bookrating.dart';
 
 class BestSellerSliverListItem extends StatelessWidget {
-  const BestSellerSliverListItem(
-      {super.key,
-      required this.height,
-      required this.width,
-      required this.bookmodel});
+  const BestSellerSliverListItem({
+    super.key,
+    required this.height,
+    required this.width,
+    required this.bookmodel,
+  });
   final double height, width;
   final BookModel bookmodel;
   @override

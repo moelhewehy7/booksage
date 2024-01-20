@@ -69,3 +69,5 @@ class BookModel extends Equatable {
     ];
   }
 }
+// --the corresponding property in the Dart object 
+// will be assigned null rather than attempting to parse a null value into an object.

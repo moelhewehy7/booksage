@@ -58,26 +58,4 @@ class NewestBooksSliverList extends StatelessWidget {
       },
     );
   }
-
-  Shimmer shimmer() {
-    return Shimmer.fromColors(
-      baseColor: const Color(0xFFE0E0E0),
-      highlightColor: const Color(0xFFF5F5F5),
-      child: SizedBox(
-        height: height * 0.3,
-        child: ListView.builder(
-          padding: const EdgeInsets.only(left: 6, right: 10),
-          itemCount: 5,
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (BuildContext context, int index) {
-            return Padding(
-              padding: const EdgeInsets.only(left: 2, top: 6),
-              child: ShimmerBookListViewItem(
-                  width: width * 0.35, height: height * 0.3),
-            );
-          },
-        ),
-      ),
-    );
-  }
 }

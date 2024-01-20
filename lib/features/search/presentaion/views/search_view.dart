@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:reading/features/home/presentation/manager/search%20cubit/search_cubit.dart';
 import 'package:reading/features/search/presentaion/views/widgets/searchviewbody.dart';
 
 class SearchView extends StatefulWidget {
@@ -9,6 +11,12 @@ class SearchView extends StatefulWidget {
 }
 
 class _SearchViewState extends State<SearchView> {
+  @override
+  void initState() {
+    BlocProvider.of<SearchCubit>(context).fetchBookbysearch(book: "General");
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -22,8 +30,6 @@ class _SearchViewState extends State<SearchView> {
               },
               icon: const Icon(Icons.arrow_back)),
         ),
-        body: SafeArea(
-          child: SearchViewBody(height: height, width: width),
-        ));
+        body: SearchViewBody(height: height, width: width));
   }
 }

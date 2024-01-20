@@ -39,7 +39,7 @@ class HomeRepoImpel implements HomeRepo {
   Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
     try {
       var data = await apiService.get(
-          endpoint: 'volumes?Filtering=free-ebooks&q=subject:sport');
+          endpoint: 'volumes?Filtering=free-ebooks&q=book:sport');
       List<dynamic> bookslist = data["items"];
       List<BookModel> books = [];
       for (var item in bookslist) {
@@ -52,9 +52,15 @@ class HomeRepoImpel implements HomeRepo {
       return right(books);
     } catch (e) {
       if (e is DioException) {
+        // Assuming you have a method to handle DioError and convert it to ServerFailure
         return left(ServerFailure.fromDioException(e));
+      } else if (e is DioException) {
+        // Assuming you have a method to handle other errors and convert them to ServerFailure
+        return left(
+            ServerFailure.fromResponse(e.response?.statusCode, e.response));
+      } else {
+        return left(ServerFailure(e.toString()));
       }
-      return left(ServerFailure(e.toString()));
     }
   }
 
@@ -77,9 +83,46 @@ class HomeRepoImpel implements HomeRepo {
       return right(books);
     } catch (e) {
       if (e is DioException) {
+        // Assuming you have a method to handle DioError and convert it to ServerFailure
         return left(ServerFailure.fromDioException(e));
+      } else if (e is DioException) {
+        // Assuming you have a method to handle other errors and convert them to ServerFailure
+        return left(
+            ServerFailure.fromResponse(e.response?.statusCode, e.response));
+      } else {
+        return left(ServerFailure(e.toString()));
       }
-      return left(ServerFailure(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<BookModel>>> fetchbysearch(
+      {required String book}) async {
+    try {
+      var data = await apiService.get(
+          endpoint:
+              'volumes?Filtering=free-ebooks&Sorting=relevance&q=book:$book');
+      List<dynamic> bookslist = data["items"];
+      List<BookModel> books = [];
+      for (var item in bookslist) {
+        try {
+          books.add(BookModel.fromJson(item));
+        } catch (e) {
+          log('Error creating BookModel: $e');
+        }
+      }
+      return right(books);
+    } catch (e) {
+      if (e is DioException) {
+        // Assuming you have a method to handle DioError and convert it to ServerFailure
+        return left(ServerFailure.fromDioException(e));
+      } else if (e is DioException) {
+        // Assuming you have a method to handle other errors and convert them to ServerFailure
+        return left(
+            ServerFailure.fromResponse(e.response?.statusCode, e.response));
+      } else {
+        return left(ServerFailure(e.toString()));
+      }
     }
   }
 }
