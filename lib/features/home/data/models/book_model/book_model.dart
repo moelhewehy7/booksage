@@ -71,3 +71,8 @@ class BookModel extends Equatable {
 }
 // --the corresponding property in the Dart object 
 // will be assigned null rather than attempting to parse a null value into an object.
+// If the 'saleInfo' field in the JSON is null, 
+// the entire ternary expression will evaluate to null,
+//  and the 'saleInfo' property of the Dart object being constructed will be assigned null.
+//   In other words, when the JSON field is null, the parsing logic is skipped, 
+// and the property is set to null
