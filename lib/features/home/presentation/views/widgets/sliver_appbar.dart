@@ -20,12 +20,12 @@ class CustomSliverAppBar extends StatelessWidget {
         children: [
           Image.asset(
             AssetsData.bookSage,
-            scale: 9,
+            scale: 11,
           ),
           IconButton(
             icon: const Icon(
               FontAwesomeIcons.magnifyingGlass,
-              size: 28,
+              size: 20,
             ),
             onPressed: () {
               GoRouter.of(context).push(AppRouter.ksearchview);

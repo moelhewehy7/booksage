@@ -16,7 +16,7 @@ class BooksListView extends StatelessWidget {
     return BlocBuilder<BooksCubit, BooksState>(builder: (context, state) {
       if (state is BooksSuccess) {
         return SizedBox(
-          height: height * 0.3,
+          height: height * 0.25,
           child: ListView.builder(
             padding: const EdgeInsets.only(left: 6, right: 10),
             itemCount: state.books.length,
@@ -30,8 +30,8 @@ class BooksListView extends StatelessWidget {
                         extra: state.books[i]);
                   },
                   child: BookListViewItem(
-                    width: width * 0.35,
-                    height: height * 0.3,
+                    width: width * 0.3,
+                    height: height * 0.25,
                     imageurl:
                         state.books[i].volumeInfo.imageLinks?.thumbnail ?? "",
                   ),
@@ -44,7 +44,7 @@ class BooksListView extends StatelessWidget {
         return Center(child: CustomError(errormessage: state.errMessage));
       } else {
         return SizedBox(
-          height: height * 0.3,
+          height: height * 0.25,
           child: ListView.builder(
             padding: const EdgeInsets.only(left: 6, right: 10),
             itemCount: 5,
@@ -53,7 +53,7 @@ class BooksListView extends StatelessWidget {
               return Padding(
                 padding: const EdgeInsets.only(left: 2, top: 6),
                 child: ShimmerBookListViewItem(
-                    width: width * 0.35, height: height * 0.3),
+                    width: width * 0.3, height: height * 0.25),
               );
             },
           ),

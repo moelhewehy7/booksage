@@ -46,9 +46,13 @@ class BooksDetailedColumn extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  book.volumeInfo.authors?[0] ?? "Author not available",
-                  style: Styles.textStyle16,
+                Expanded(
+                  child: Text(
+                    book.volumeInfo.authors?[0] ?? "Author not available",
+                    style: Styles.textStyle16,
+                    maxLines: 4,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
                 BookRating(
                     rating: book.volumeInfo.averageRating ?? 0,

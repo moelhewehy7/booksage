@@ -24,14 +24,13 @@ class BestSellerSliverListItem extends StatelessWidget {
             .push(AppRouter.kbookdetailesview, extra: bookmodel);
       },
       child: SizedBox(
-        height: height * 0.16,
+        height: height * 0.15,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
               padding: EdgeInsets.zero,
               width: width * 0.20,
-              height: height * 0.16,
               decoration: BoxDecoration(
                   color: const Color.fromARGB(255, 232, 232, 232),
                   borderRadius: BorderRadius.circular(6)),
@@ -80,7 +79,7 @@ class BestSellerSliverListItem extends StatelessWidget {
                           textAlign: TextAlign.justify,
                           style: GoogleFonts.robotoSlab(
                               textStyle:
-                                  Styles.textStyle20.copyWith(fontSize: 20))),
+                                  Styles.textStyle20.copyWith(fontSize: 18))),
                       const Spacer(
                         flex: 1,
                       ),

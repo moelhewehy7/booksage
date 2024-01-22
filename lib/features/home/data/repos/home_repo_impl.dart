@@ -52,14 +52,12 @@ class HomeRepoImpel implements HomeRepo {
       return right(books);
     } catch (e) {
       if (e is DioException) {
-        // Assuming you have a method to handle DioError and convert it to ServerFailure
         return left(ServerFailure.fromDioException(e));
       } else if (e is DioException) {
-        // Assuming you have a method to handle other errors and convert them to ServerFailure
         return left(
             ServerFailure.fromResponse(e.response?.statusCode, e.response));
       } else {
-        return left(ServerFailure(e.toString()));
+        return left(ServerFailure("Please try again later"));
       }
     }
   }
@@ -83,14 +81,12 @@ class HomeRepoImpel implements HomeRepo {
       return right(books);
     } catch (e) {
       if (e is DioException) {
-        // Assuming you have a method to handle DioError and convert it to ServerFailure
         return left(ServerFailure.fromDioException(e));
       } else if (e is DioException) {
-        // Assuming you have a method to handle other errors and convert them to ServerFailure
         return left(
             ServerFailure.fromResponse(e.response?.statusCode, e.response));
       } else {
-        return left(ServerFailure(e.toString()));
+        return left(ServerFailure("Please try again later"));
       }
     }
   }
@@ -121,7 +117,7 @@ class HomeRepoImpel implements HomeRepo {
         return left(
             ServerFailure.fromResponse(e.response?.statusCode, e.response));
       } else {
-        return left(ServerFailure(e.toString()));
+        return left(ServerFailure("Please try again later"));
       }
     }
   }

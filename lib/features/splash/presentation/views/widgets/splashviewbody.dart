@@ -60,7 +60,7 @@ class _SplashViewbodyState extends State<SplashViewbody>
             children: [
               Image.asset(
                 AssetsData.logo,
-                scale: 3,
+                scale: 4,
               ),
               const SizedBox(
                 height: 5,
@@ -72,7 +72,7 @@ class _SplashViewbodyState extends State<SplashViewbody>
                       opacity: fadeAnimation.value,
                       child: Image.asset(
                         AssetsData.bookSage,
-                        scale: 8,
+                        scale: 12,
                       ),
                     );
                   })

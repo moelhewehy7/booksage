@@ -21,14 +21,13 @@ class ShimmerBestSellerSliverListItem extends StatelessWidget {
         baseColor: const Color(0xFFE0E0E0),
         highlightColor: const Color(0xFFF5F5F5),
         child: SizedBox(
-          height: height * 0.16,
+          height: height * 0.15,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
                 padding: EdgeInsets.zero,
                 width: width * 0.20,
-                height: height * 0.16,
                 decoration: BoxDecoration(
                   color: Colors.grey, // Adjust the color as needed
                   borderRadius: BorderRadius.circular(6),
