@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
 import '../../../data/models/book_model/book_model.dart';
-import '../../../data/repos/home_repo.dart';
+import '../../../domain/repos/home_repo.dart';
 
 part 'similiar_books_state.dart';
 

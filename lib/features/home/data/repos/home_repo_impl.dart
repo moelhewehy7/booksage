@@ -5,7 +5,7 @@ import 'package:dio/dio.dart';
 import 'package:reading/core/errors/failures.dart';
 import 'package:reading/core/utils/api._service.dart';
 import 'package:reading/features/home/data/models/book_model/book_model.dart';
-import 'package:reading/features/home/data/repos/home_repo.dart';
+import 'package:reading/features/home/domain/repos/home_repo.dart';
 
 class HomeRepoImpel implements HomeRepo {
   final ApiService apiService;
