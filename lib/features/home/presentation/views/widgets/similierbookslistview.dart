@@ -27,8 +27,7 @@ class SimilierBooksListView extends StatelessWidget {
                   child: BookListViewItem(
                     height: height,
                     width: width * 0.2,
-                    imageurl:
-                        state.books[i].volumeInfo.imageLinks?.thumbnail ?? "",
+                    imageurl: " state.books[i]",
                   ),
                 );
               },

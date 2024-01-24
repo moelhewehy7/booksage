@@ -17,6 +17,6 @@ final class SimiliarBooksFailure extends SimiliarBooksState {
 }
 
 final class SimiliarBooksSuccess extends SimiliarBooksState {
-  final List<BookModel> books;
+  final List<BookEntity> books;
   const SimiliarBooksSuccess({required this.books});
 }

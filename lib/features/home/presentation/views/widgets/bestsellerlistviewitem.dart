@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:reading/core/utils/app_router.dart';
 import 'package:reading/features/home/data/models/book_model/book_model.dart';
+import 'package:reading/features/home/domain/entities/book_entity.dart';
 import '../../../../../core/utils/styles.dart';
 import 'bookrating.dart';
 
@@ -15,7 +16,7 @@ class BestSellerSliverListItem extends StatelessWidget {
     required this.bookmodel,
   });
   final double height, width;
-  final BookModel bookmodel;
+  final BookEntity bookmodel;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -37,7 +38,7 @@ class BestSellerSliverListItem extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(6),
                 child: ExtendedImage.network(
-                  bookmodel.volumeInfo.imageLinks?.thumbnail ?? "",
+                  " bookmodel.volumeInfo.imageLinks?.thumbnail ?? " "",
                   fit: BoxFit.fill,
                   cache: true,
                   loadStateChanged: (ExtendedImageState state) {
@@ -62,14 +63,14 @@ class BestSellerSliverListItem extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    bookmodel.volumeInfo.title ?? "Title not available",
+                    "bookmodel.volumeInfo.title ?? ",
                     overflow: TextOverflow.ellipsis,
                     maxLines: 2,
                     style: Styles.textStyle20,
                   ),
                   Text(
-                      bookmodel.volumeInfo.authors?[0] ??
-                          "Author not available",
+                      " bookmodel.volumeInfo.authors?[0] ??"
+                      "Author not available",
                       style: Styles.textStyle14,
                       overflow: TextOverflow.ellipsis,
                       maxLines: 1),
@@ -84,8 +85,8 @@ class BestSellerSliverListItem extends StatelessWidget {
                         flex: 1,
                       ),
                       BookRating(
-                        rating: bookmodel.volumeInfo.averageRating ?? 0,
-                        count: bookmodel.volumeInfo.ratingsCount ?? 0,
+                        rating: 0,
+                        count: 0,
                       )
                     ],
                   )

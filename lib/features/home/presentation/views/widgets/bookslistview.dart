@@ -33,7 +33,8 @@ class BooksListView extends StatelessWidget {
                     width: width * 0.3,
                     height: height * 0.25,
                     imageurl:
-                        state.books[i].volumeInfo.imageLinks?.thumbnail ?? "",
+                        " state.books[i].volumeInfo.imageLinks?.thumbnail ?? "
+                        "",
                   ),
                 ),
               );

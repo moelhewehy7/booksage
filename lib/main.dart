@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:reading/core/utils/service_locator.dart';
 import 'package:reading/features/home/data/repos/home_repo_impl.dart';
 import 'package:reading/features/home/presentation/manager/books%20cubit/books_cubit.dart';
@@ -10,6 +11,7 @@ import 'core/utils/app_router.dart';
 
 void main() async {
   setupServiceLocator();
+  await Hive.initFlutter();
   runApp(const Reading());
 }
 

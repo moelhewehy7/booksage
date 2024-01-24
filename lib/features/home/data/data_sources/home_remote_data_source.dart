@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'package:reading/features/home/data/models/book_model/book_model.dart';
 import '../../../../core/utils/api._service.dart';
 import '../../domain/entities/book_entity.dart';
