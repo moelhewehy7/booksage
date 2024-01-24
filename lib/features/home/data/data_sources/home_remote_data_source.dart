@@ -1,4 +1,7 @@
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:reading/constants.dart';
 import 'package:reading/features/home/data/models/book_model/book_model.dart';
+import '../../../../core/function/cache_books._data.dart';
 import '../../../../core/utils/api._service.dart';
 import '../../domain/entities/book_entity.dart';
 
@@ -20,6 +23,7 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
     for (var item in bookslist) {
       books.add(BookModel.fromJson(item));
     }
+    cachebooksdata(books, kFeautredbox);
     return books;
   }
 
@@ -32,6 +36,7 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
     for (var item in bookslist) {
       books.add(BookModel.fromJson(item));
     }
+    cachebooksdata(books, kFeautredbox);
     return books;
   }
 }

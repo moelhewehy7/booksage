@@ -7,11 +7,15 @@ import 'package:reading/features/home/data/repos/home_repo_impl.dart';
 import 'package:reading/features/home/presentation/manager/books%20cubit/books_cubit.dart';
 import 'package:reading/features/home/presentation/manager/newest%20books%20cubit/newest_books_cubit.dart';
 
+import 'constants.dart';
 import 'core/utils/app_router.dart';
+import 'features/home/domain/entities/book_entity.dart';
 
 void main() async {
   setupServiceLocator();
   await Hive.initFlutter();
+  Hive.registerAdapter(BookEntityAdapter());
+  await Hive.openBox(kFeautredbox);
   runApp(const Reading());
 }
 
