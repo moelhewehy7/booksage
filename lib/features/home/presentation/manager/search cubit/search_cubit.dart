@@ -1,9 +1,7 @@
-import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:reading/features/home/domain/entities/book_entity.dart';
 import 'package:reading/features/home/domain/repos/home_repo.dart';
-
-import '../../../data/models/book_model/book_model.dart';
 
 part 'search_state.dart';
 
@@ -12,9 +10,9 @@ class SearchCubit extends Cubit<SearchState> {
   final HomeRepo homeRepo;
   Future<void> fetchBookbysearch({required String book}) async {
     emit(SearchLoading());
-    var result = await homeRepo.fetchbysearch(book: book);
-    result.fold(
-        (failure) => emit(SearchFailure(errMessage: failure.errorMessage)),
-        (books) => emit(SearchSuccess(books: books)));
+    // var result = await homeRepo.fetchbysearch(book: book);
+    // result.fold(
+    //     (failure) => emit(SearchFailure(errMessage: failure.errorMessage)),
+    //     (books) => emit(SearchSuccess(books: books)));
   }
 }

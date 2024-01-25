@@ -3,9 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:reading/core/utils/app_router.dart';
 import 'package:reading/core/utils/widgets/custom_error.dart';
-import 'package:reading/features/home/presentation/manager/books%20cubit/books_cubit.dart';
 import 'package:reading/features/home/presentation/views/widgets/shimmerbooklistviewitem.dart';
 
+import '../../manager/Fetch feautred books cubit/featured_books_cubit.dart';
 import 'booklistviewitem.dart';
 
 class BooksListView extends StatelessWidget {
@@ -13,8 +13,9 @@ class BooksListView extends StatelessWidget {
   final double width, height;
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<BooksCubit, BooksState>(builder: (context, state) {
-      if (state is BooksSuccess) {
+    return BlocBuilder<FeaturedBooksCubit, FeaturedBooksState>(
+        builder: (context, state) {
+      if (state is FeaturedBooksSuccess) {
         return SizedBox(
           height: height * 0.25,
           child: ListView.builder(
@@ -41,7 +42,7 @@ class BooksListView extends StatelessWidget {
             },
           ),
         );
-      } else if (state is BooksFailure) {
+      } else if (state is FeaturedBooksFailure) {
         return Center(child: CustomError(errormessage: state.errMessage));
       } else {
         return SizedBox(

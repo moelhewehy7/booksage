@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:reading/core/utils/app_router.dart';
-import 'package:reading/features/home/data/models/book_model/book_model.dart';
 import 'package:reading/features/home/domain/entities/book_entity.dart';
 import '../../../../../core/utils/styles.dart';
 import 'bookrating.dart';
@@ -62,13 +61,13 @@ class BestSellerSliverListItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
+                  const Text(
                     "bookmodel.volumeInfo.title ?? ",
                     overflow: TextOverflow.ellipsis,
                     maxLines: 2,
                     style: Styles.textStyle20,
                   ),
-                  Text(
+                  const Text(
                       " bookmodel.volumeInfo.authors?[0] ??"
                       "Author not available",
                       style: Styles.textStyle14,
@@ -84,7 +83,7 @@ class BestSellerSliverListItem extends StatelessWidget {
                       const Spacer(
                         flex: 1,
                       ),
-                      BookRating(
+                      const BookRating(
                         rating: 0,
                         count: 0,
                       )

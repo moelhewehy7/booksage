@@ -40,6 +40,7 @@ class BookListViewItem extends StatelessWidget {
                   return const Icon(Icons.error);
                 case LoadState.loading:
               }
+              return null;
             },
           ),
         ),
