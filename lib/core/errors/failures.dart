@@ -8,8 +8,9 @@ abstract class Failure {
 
 class ServerFailure extends Failure {
   ServerFailure(super.errorMessage);
-  factory ServerFailure.fromDioException(DioException dioException) {
-    switch (dioException.type) {
+
+  factory ServerFailure.fromDioException(DioException e) {
+    switch (e.type) {
       case DioExceptionType.connectionTimeout:
         return ServerFailure("Connection timeout with serverapi");
       case DioExceptionType.sendTimeout:
@@ -20,13 +21,13 @@ class ServerFailure extends Failure {
         return ServerFailure("bad Certificate  with serverapi");
       case DioExceptionType.badResponse:
         return ServerFailure.fromResponse(
-            dioException.response!.statusCode, dioException.response!.data);
+            e.response!.statusCode, e.response!.data);
       case DioExceptionType.cancel:
         return ServerFailure("Connection timeout with serverapi");
       case DioExceptionType.connectionError:
         return ServerFailure("There is no internet Connection");
       case DioExceptionType.unknown:
-        if (dioException.message!.contains('SocketException')) {
+        if (e.message!.contains('SocketException')) {
           return ServerFailure('No Internet Connection');
         }
         return ServerFailure('Unexpected Error, Please try again!');
