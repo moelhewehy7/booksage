@@ -7,6 +7,7 @@ import 'package:reading/features/home/data/repos/home_repo_impl.dart';
 
 GetIt getIt = GetIt.instance;
 void setupServiceLocator() {
+  getIt.registerSingleton<ApiService>(ApiService(Dio()));
   getIt.registerSingleton<HomeRepoImpel>(
     HomeRepoImpel(
       homelocaldatasource: HomeLocalDataSourceImpl(),
@@ -15,5 +16,4 @@ void setupServiceLocator() {
       ),
     ),
   );
-  getIt.registerSingleton<ApiService>(ApiService(Dio()));
 }

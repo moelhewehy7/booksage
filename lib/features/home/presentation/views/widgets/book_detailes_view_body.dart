@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:reading/features/home/data/models/book_model/book_model.dart';
+import '../../../domain/entities/book_entity.dart';
 import 'paddedbooksdetailedcolumn.dart';
 import 'similierbookslistview.dart';
 
 class BookDetailesViewBody extends StatelessWidget {
-  const BookDetailesViewBody({super.key, required this.bookModel});
-  final BookModel bookModel;
-  @override
+  const BookDetailesViewBody({super.key, required this.bookentity});
+  final BookEntity bookentity;
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
@@ -19,7 +18,7 @@ class BookDetailesViewBody extends StatelessWidget {
                 BooksDetailedColumn(
                   height: height,
                   width: width,
-                  book: bookModel,
+                  book: bookentity,
                 ),
                 Expanded(
                   child: SimilierBooksListView(

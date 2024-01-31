@@ -17,13 +17,19 @@ class BookEntity {
   final num? rating;
   @HiveField(6)
   final num? avgrating;
+  @HiveField(7)
+  final String? category;
+  @HiveField(8)
+  final String? preview;
 
   BookEntity(
       {required this.bookid,
+      required this.preview,
       required this.avgrating,
       required this.image,
       required this.title,
       required this.authorName,
       required this.price,
-      required this.rating});
+      required this.rating,
+      required this.category});
 }

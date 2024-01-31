@@ -1,8 +1,8 @@
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 
-class BookListViewItem extends StatelessWidget {
-  const BookListViewItem({
+class FeaturedBookListViewItem extends StatelessWidget {
+  const FeaturedBookListViewItem({
     super.key,
     required this.width,
     required this.height,

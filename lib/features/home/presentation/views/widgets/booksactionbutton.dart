@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:reading/core/function/lunch_widget.dart';
 import 'package:reading/core/utils/custombutton.dart';
-import 'package:reading/features/home/data/models/book_model/book_model.dart';
+import 'package:reading/features/home/domain/entities/book_entity.dart';
 
 import '../../../../../constants.dart';
 
 class BooksActionButton extends StatelessWidget {
-  const BooksActionButton({super.key, required this.bookmodel});
-  final BookModel bookmodel;
+  const BooksActionButton({super.key, required this.bookEntity});
+  final BookEntity bookEntity;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -30,9 +30,9 @@ class BooksActionButton extends StatelessWidget {
             borderRadius: const BorderRadius.only(
                 topRight: Radius.circular(12),
                 bottomRight: Radius.circular(12)),
-            string: gettext(bookmodel),
+            string: gettext(bookEntity),
             onPressed: () async {
-              await lunchurl(context, bookmodel.volumeInfo.previewLink!);
+              await lunchurl(context, bookEntity.preview!);
             },
             color: const Color(0xFF7B574B),
             textcolor: Colors.white,
@@ -45,8 +45,8 @@ class BooksActionButton extends StatelessWidget {
     );
   }
 
-  String gettext(BookModel bookModel) {
-    if (bookmodel.volumeInfo.previewLink == null) {
+  String gettext(BookEntity bookEntity) {
+    if (bookEntity.preview == null) {
       return "Preview Not Available";
     } else {
       return "Preview Available";

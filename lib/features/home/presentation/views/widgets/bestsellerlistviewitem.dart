@@ -12,19 +12,19 @@ class BestSellerSliverListItem extends StatelessWidget {
     super.key,
     required this.height,
     required this.width,
-    required this.bookmodel,
+    required this.bookenitity,
   });
   final double height, width;
-  final BookEntity bookmodel;
+  final BookEntity bookenitity;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
         GoRouter.of(context)
-            .push(AppRouter.kbookdetailesview, extra: bookmodel);
+            .push(AppRouter.kbookdetailesview, extra: bookenitity);
       },
       child: SizedBox(
-        height: height * 0.15,
+        height: height * 0.16,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -37,7 +37,7 @@ class BestSellerSliverListItem extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(6),
                 child: ExtendedImage.network(
-                  " bookmodel.volumeInfo.imageLinks?.thumbnail ?? " "",
+                  bookenitity.image ?? "",
                   fit: BoxFit.fill,
                   cache: true,
                   loadStateChanged: (ExtendedImageState state) {
@@ -61,15 +61,13 @@ class BestSellerSliverListItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
-                    "bookmodel.volumeInfo.title ?? ",
+                  Text(
+                    bookenitity.title,
                     overflow: TextOverflow.ellipsis,
                     maxLines: 2,
                     style: Styles.textStyle20,
                   ),
-                  const Text(
-                      " bookmodel.volumeInfo.authors?[0] ??"
-                      "Author not available",
+                  Text(bookenitity.authorName ?? "Author not available",
                       style: Styles.textStyle14,
                       overflow: TextOverflow.ellipsis,
                       maxLines: 1),
@@ -80,9 +78,6 @@ class BestSellerSliverListItem extends StatelessWidget {
                           style: GoogleFonts.robotoSlab(
                               textStyle:
                                   Styles.textStyle20.copyWith(fontSize: 18))),
-                      const Spacer(
-                        flex: 1,
-                      ),
                       const BookRating(
                         rating: 0,
                         count: 0,

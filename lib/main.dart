@@ -34,13 +34,15 @@ class Reading extends StatelessWidget {
         BlocProvider(
           create: (context) => FeaturedBooksCubit(
               FetchFeaturedBooksUseCase(getIt.get<HomeRepoImpel>()))
-            ..fetchBooks(),
+            ..fetchfeaturedBooks(),
         ),
         BlocProvider(
           create: (context) => NewestBooksCubit(
               FetchNewestBooksUseCase(getIt.get<HomeRepoImpel>()))
             ..fetchnewestBooks(),
         ),
+        //  the cascade operator (..) in Dart. It's used to perform a sequence of operations on the same object.
+        //  It's typically used to make a series of calls on the same object without repeating the object reference.
       ],
       child: MaterialApp.router(
         routerConfig: AppRouter.router,

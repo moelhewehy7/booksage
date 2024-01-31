@@ -9,7 +9,7 @@ abstract class Styles {
     fontWeight: FontWeight.w600,
   );
   static const textStyle20 = TextStyle(
-    fontSize: 20,
+    fontSize: 18,
     fontFamily: kGtSectraFine,
     fontWeight: FontWeight.bold,
   );
@@ -19,7 +19,7 @@ abstract class Styles {
     letterSpacing: 1.2,
   );
   static const textStyle14 = TextStyle(
-    fontSize: 17,
+    fontSize: 16,
     fontWeight: FontWeight.w500,
   );
 

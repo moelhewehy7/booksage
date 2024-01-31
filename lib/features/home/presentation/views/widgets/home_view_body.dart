@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:reading/core/utils/styles.dart';
 import 'package:reading/features/home/presentation/views/widgets/sliver_appbar.dart';
 import 'bestsellersliverlist.dart';
-import 'bookslistview.dart';
+import 'featuredbookslistview.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -20,7 +20,7 @@ class HomeViewBody extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              BooksListView(
+              FeaturedBooksListView(
                 height: height,
                 width: width,
               ),

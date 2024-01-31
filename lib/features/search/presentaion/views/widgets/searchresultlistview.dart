@@ -29,7 +29,7 @@ class SearchResultListView extends StatelessWidget {
                 child: BestSellerSliverListItem(
                   height: height,
                   width: width,
-                  bookmodel: state.books[i],
+                  bookenitity: state.books[i],
                 ),
               );
             },

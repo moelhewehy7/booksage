@@ -1,7 +1,7 @@
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:reading/core/utils/styles.dart';
-import 'package:reading/features/home/data/models/book_model/book_model.dart';
+import 'package:reading/features/home/domain/entities/book_entity.dart';
 import 'package:reading/features/home/presentation/views/widgets/bookrating.dart';
 import 'package:reading/features/home/presentation/views/widgets/booksactionbutton.dart';
 import 'package:reading/features/home/presentation/views/widgets/custom_appbar.dart';
@@ -15,7 +15,7 @@ class BooksDetailedColumn extends StatelessWidget {
 
   final double height;
   final double width;
-  final BookModel book;
+  final BookEntity book;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -35,7 +35,7 @@ class BooksDetailedColumn extends StatelessWidget {
             height: 8,
           ),
           Text(
-            book.volumeInfo.title ?? "Title not available",
+            book.title,
             style: Styles.textStyle25,
           ),
           const SizedBox(
@@ -48,15 +48,13 @@ class BooksDetailedColumn extends StatelessWidget {
               children: [
                 Expanded(
                   child: Text(
-                    book.volumeInfo.authors?[0] ?? "Author not available",
+                    book.authorName ?? "",
                     style: Styles.textStyle16,
                     maxLines: 4,
                     overflow: TextOverflow.ellipsis,
                   ),
                 ),
-                BookRating(
-                    rating: book.volumeInfo.averageRating ?? 0,
-                    count: book.volumeInfo.ratingsCount ?? 0)
+                BookRating(rating: book.avgrating ?? 0, count: book.rating ?? 0)
               ],
             ),
           ),
@@ -76,7 +74,7 @@ class BooksDetailedColumn extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(6),
               child: ExtendedImage.network(
-                book.volumeInfo.imageLinks?.thumbnail ?? "",
+                book.image ?? "",
                 fit: BoxFit.fill,
                 cache: true,
                 loadStateChanged: (ExtendedImageState state) {
@@ -95,7 +93,7 @@ class BooksDetailedColumn extends StatelessWidget {
           const SizedBox(
             height: 15,
           ),
-          BooksActionButton(bookmodel: book),
+          BooksActionButton(bookEntity: book),
           const SizedBox(
             height: 20,
           ),

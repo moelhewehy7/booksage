@@ -3,9 +3,6 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:reading/core/utils/widgets/custom_error.dart';
 import 'package:reading/features/home/presentation/manager/newest%20books%20cubit/newest_books_cubit.dart';
-import 'package:reading/features/home/presentation/views/widgets/shimmerbooklistviewitem.dart';
-import 'package:shimmer/shimmer.dart';
-
 import 'bestsellerlistviewitem.dart';
 import 'shimmerbestsellersliverlistitem.dart';
 
@@ -28,7 +25,7 @@ class NewestBooksSliverList extends StatelessWidget {
                 child: BestSellerSliverListItem(
                   height: height,
                   width: width,
-                  bookmodel: state.books[i],
+                  bookenitity: state.books[i],
                 ),
               );
             },

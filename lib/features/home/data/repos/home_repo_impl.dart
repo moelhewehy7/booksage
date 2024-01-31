@@ -13,13 +13,16 @@ class HomeRepoImpel implements HomeRepo {
       {required this.homeremotedatasource, required this.homelocaldatasource});
 
   @override
-  Future<Either<Failure, List<BookEntity>>> fetchFeaturedBooks() async {
+  Future<Either<Failure, List<BookEntity>>> fetchFeaturedBooks(
+      {int pagenumber = 0}) async {
     try {
-      List<BookEntity> cachedbook = homelocaldatasource.fetchFeaturedBooks();
+      List<BookEntity> cachedbook =
+          homelocaldatasource.fetchFeaturedBooks(pagenumber: pagenumber);
       if (cachedbook.isNotEmpty) {
         return right(cachedbook);
       }
-      List<BookEntity> books = await homeremotedatasource.fetchFeaturedBooks();
+      List<BookEntity> books =
+          await homeremotedatasource.fetchFeaturedBooks(pagenumber: pagenumber);
       return right(books);
     } catch (e) {
       if (e is DioException) {
@@ -45,39 +48,32 @@ class HomeRepoImpel implements HomeRepo {
     } catch (e) {
       if (e is DioException) {
         return left(ServerFailure.fromDioException(e));
+      } else if (e is DioException) {
+        return left(ServerFailure.fromResponse(
+            e.response!.statusCode, e.response!.data));
+      } else {
+        return left(ServerFailure("Please try again later"));
       }
-      return left(ServerFailure(e.toString()));
     }
   }
 
-  // @override
-  // Future<Either<Failure, List<BookModel>>> fetchSimilarBooks(
-  //     {required String categry}) async {
-  //   try {
-  //     var data = await apiService.get(
-  //         endpoint:
-  //             'volumes?Filtering=free-ebooks&Sorting=relevance&q=subject:$categry');
-  //     List<dynamic> bookslist = data["items"];
-  //     List<BookModel> books = [];
-  //     for (var item in bookslist) {
-  //       try {
-  //         books.add(BookModel.fromJson(item));
-  //       } catch (e) {
-  //         log('Error creating BookModel: $e');
-  //       }
-  //     }
-  //     return right(books);
-  //   } catch (e) {
-  //     if (e is DioException) {
-  //       return left(ServerFailure.fromDioException(e));
-  //     } else if (e is DioException) {
-  //       return left(
-  //           ServerFailure.fromResponse(e.response?.statusCode, e.response));
-  //     } else {
-  //       return left(ServerFailure("Please try again later"));
-  //     }
-  //   }
-  // }
+  @override
+  Future<Either<Failure, List<BookEntity>>> fetchSimilarBooks(
+      {required String categry}) async {
+    try {
+      List<BookEntity> books = await homeremotedatasource.fetchNewstBooks();
+      return right(books);
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioException(e));
+      } else if (e is DioException) {
+        return left(ServerFailure.fromResponse(
+            e.response!.statusCode, e.response!.data));
+      } else {
+        return left(ServerFailure("Please try again later"));
+      }
+    }
+  }
 
   // @override
   // Future<Either<Failure, List<BookModel>>> fetchbysearch(

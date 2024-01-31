@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:reading/features/home/presentation/manager/similar%20books%20cubit/similiar_books_cubit.dart';
 import '../../../../../core/utils/widgets/custom_error.dart';
-import 'booklistviewitem.dart';
+import 'featuredbooklistviewitem.dart';
 import 'shimmersimilierlistview.dart';
 
 class SimilierBooksListView extends StatelessWidget {
@@ -24,10 +24,10 @@ class SimilierBooksListView extends StatelessWidget {
                 return Padding(
                   padding:
                       const EdgeInsets.symmetric(vertical: 10, horizontal: 2),
-                  child: BookListViewItem(
+                  child: FeaturedBookListViewItem(
                     height: height,
                     width: width * 0.2,
-                    imageurl: " state.books[i]",
+                    imageurl: state.books[i].image ?? "",
                   ),
                 );
               },
