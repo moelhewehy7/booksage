@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:reading/core/utils/app_router.dart';
 import 'package:reading/features/home/presentation/manager/similar%20books%20cubit/similiar_books_cubit.dart';
 import '../../../../../core/utils/widgets/custom_error.dart';
 import 'featuredbooklistviewitem.dart';
@@ -15,7 +17,7 @@ class SimilierBooksListView extends StatelessWidget {
       builder: (context, state) {
         if (state is SimiliarBooksSuccess) {
           return SizedBox(
-            height: height * 0.17,
+            height: height * 0.20,
             child: ListView.builder(
               padding: const EdgeInsets.only(left: 15, right: 15),
               scrollDirection: Axis.horizontal,
@@ -24,10 +26,16 @@ class SimilierBooksListView extends StatelessWidget {
                 return Padding(
                   padding:
                       const EdgeInsets.symmetric(vertical: 10, horizontal: 2),
-                  child: FeaturedBookListViewItem(
-                    height: height,
-                    width: width * 0.2,
-                    imageurl: state.books[i].image ?? "",
+                  child: GestureDetector(
+                    onTap: () {
+                      GoRouter.of(context)
+                          .push(AppRouter.ksimilarview, extra: state.books[i]);
+                    },
+                    child: FeaturedBookListViewItem(
+                      height: height,
+                      width: width * 0.25,
+                      imageurl: state.books[i].image ?? "",
+                    ),
                   ),
                 );
               },

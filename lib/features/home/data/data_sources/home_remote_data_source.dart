@@ -10,6 +10,7 @@ abstract class HomeRemoteDataSource {
   Future<List<BookEntity>> fetchFeaturedBooks({int pagenumber = 0});
   Future<List<BookEntity>> fetchNewstBooks();
   Future<List<BookEntity>> fetchSimilarBooks({required String categry});
+  Future<List<BookEntity>> fetchBySearch({required String book});
 }
 
 class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
@@ -48,6 +49,19 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
     var data = await apiService.get(
         endpoint:
             'volumes?Filtering=free-ebooks&Sorting=relevance&q=subject:$categry');
+    List<dynamic> bookslist = data["items"];
+    List<BookModel> books = [];
+    for (var item in bookslist) {
+      books.add(BookModel.fromJson(item));
+    }
+    return books;
+  }
+
+  @override
+  Future<List<BookEntity>> fetchBySearch({required String book}) async {
+    var data = await apiService.get(
+        endpoint:
+            'volumes?Filtering=free-ebooks&Sorting=relevance&q=book:$book');
     List<dynamic> bookslist = data["items"];
     List<BookModel> books = [];
     for (var item in bookslist) {

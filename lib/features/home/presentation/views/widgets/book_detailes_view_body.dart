@@ -6,6 +6,7 @@ import 'similierbookslistview.dart';
 class BookDetailesViewBody extends StatelessWidget {
   const BookDetailesViewBody({super.key, required this.bookentity});
   final BookEntity bookentity;
+  @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
@@ -15,16 +16,18 @@ class BookDetailesViewBody extends StatelessWidget {
             hasScrollBody: false,
             child: Column(
               children: [
-                BooksDetailedColumn(
-                  height: height,
-                  width: width,
-                  book: bookentity,
-                ),
-                Expanded(
-                  child: SimilierBooksListView(
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 24),
+                  child: BooksDetailedColumn(
                     height: height,
                     width: width,
+                    book: bookentity,
+                    text: "You can also like",
                   ),
+                ),
+                SimilierBooksListView(
+                  height: height,
+                  width: width,
                 ),
               ],
             ))

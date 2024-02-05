@@ -18,14 +18,15 @@ class BookEntityAdapter extends TypeAdapter<BookEntity> {
     };
     return BookEntity(
       bookid: fields[0] as String,
-      preview: fields[8] as String?,
-      avgrating: fields[6] as num?,
       image: fields[1] as String?,
       title: fields[2] as String,
       authorName: fields[3] as String?,
       price: fields[4] as num?,
       rating: fields[5] as num?,
+      avgrating: fields[6] as num?,
       category: fields[7] as String?,
+      preview: fields[8] as String?,
+      description: fields[9] as String?,
     );
   }
 
@@ -50,7 +51,9 @@ class BookEntityAdapter extends TypeAdapter<BookEntity> {
       ..writeByte(7)
       ..write(obj.category)
       ..writeByte(8)
-      ..write(obj.preview);
+      ..write(obj.preview)
+      ..writeByte(9)
+      ..write(obj.description);
   }
 
   @override

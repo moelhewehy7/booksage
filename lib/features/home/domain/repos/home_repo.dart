@@ -9,8 +9,8 @@ abstract class HomeRepo {
   Future<Either<Failure, List<BookEntity>>> fetchNewstBooks();
   Future<Either<Failure, List<BookEntity>>> fetchSimilarBooks(
       {required String categry});
-  // Future<Either<Failure, List<BookEntity>>> fetchbysearch(
-  //     {required String book});
+  Future<Either<Failure, List<BookEntity>>> fetchBySearch(
+      {required String book});
 }
 // The Repository Pattern in Flutter is a software design pattern 
 // that abstracts the logic that retrieves data

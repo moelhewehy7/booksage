@@ -10,7 +10,7 @@ class BookModel extends BookEntity {
   final String? id;
   final String? etag;
   final String? selfLink;
-  final VolumeInfo volumeInfo;
+  final VolumeInfo? volumeInfo;
   final SaleInfo? saleInfo;
   final AccessInfo? accessInfo;
   final SearchInfo? searchInfo;
@@ -25,16 +25,17 @@ class BookModel extends BookEntity {
     this.accessInfo,
     this.searchInfo,
   }) : super(
-          bookid: id!,
-          image: volumeInfo.imageLinks?.thumbnail ?? "",
-          title: volumeInfo.title!,
-          authorName: volumeInfo.authors?[0] ?? "No Name",
-          price: 0,
-          rating: volumeInfo.ratingsCount ?? 0,
-          avgrating: volumeInfo.averageRating ?? 0,
-          category: volumeInfo.categories?[0] ?? "",
-          preview: volumeInfo.previewLink ?? "",
-        );
+            bookid: id ?? "",
+            image: volumeInfo?.imageLinks?.thumbnail ?? "",
+            title: volumeInfo?.title ?? "Title not available",
+            authorName: volumeInfo?.authors?[0] ?? "Author not available",
+            price: 0,
+            rating: volumeInfo?.ratingsCount ?? 0,
+            avgrating: volumeInfo?.averageRating ?? 0,
+            category: volumeInfo?.categories?[0] ?? "",
+            preview: volumeInfo?.previewLink ?? "",
+            description:
+                volumeInfo?.description ?? "Description not available");
 
   factory BookModel.fromJson(Map<String, dynamic> json) => BookModel(
         kind: json['kind'] as String?,
@@ -59,7 +60,7 @@ class BookModel extends BookEntity {
         'id': id,
         'etag': etag,
         'selfLink': selfLink,
-        'volumeInfo': volumeInfo.toJson(),
+        'volumeInfo': volumeInfo?.toJson(),
         'saleInfo': saleInfo?.toJson(),
         'accessInfo': accessInfo?.toJson(),
         'searchInfo': searchInfo?.toJson(),

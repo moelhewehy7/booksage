@@ -51,11 +51,19 @@ android {
         versionName flutterVersionName
     }
 
-    buildTypes {
+       buildTypes {
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release
+            // Other release configurations...
+            // ...
+            outputs {
+                // This section defines the naming of the APK file
+                // By default, it's often app-release.apk
+                // You can customize the name here
+                apk {
+                    outputFileName = "BookSage.apk"
+                }
+            }
         }
     }
 }

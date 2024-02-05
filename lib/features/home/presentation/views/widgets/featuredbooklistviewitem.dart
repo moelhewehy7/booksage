@@ -16,7 +16,7 @@ class FeaturedBookListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 2, // Add elevation or adjust as needed
+      elevation: 2,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(6),
       ),

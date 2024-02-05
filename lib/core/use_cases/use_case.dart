@@ -4,7 +4,7 @@ import '../../features/home/domain/entities/book_entity.dart';
 import '../errors/failures.dart';
 
 abstract class UseCase<Param> {
-  Future<Either<Failure, List<BookEntity>>> call([Param parm]);
+  Future<Either<Failure, List<BookEntity>>> call([Param param]);
 }
 
 class NoParam {}

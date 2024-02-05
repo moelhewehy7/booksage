@@ -21,9 +21,12 @@ class BookEntity {
   final String? category;
   @HiveField(8)
   final String? preview;
+  @HiveField(9)
+  final String? description;
 
   BookEntity(
       {required this.bookid,
+      required this.description,
       required this.preview,
       required this.avgrating,
       required this.image,

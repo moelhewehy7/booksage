@@ -29,6 +29,7 @@ class BestSellerSliverListItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
+              height: height * 0.16,
               padding: EdgeInsets.zero,
               width: width * 0.20,
               decoration: BoxDecoration(
@@ -37,6 +38,7 @@ class BestSellerSliverListItem extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(6),
                 child: ExtendedImage.network(
+                  alignment: Alignment.center,
                   bookenitity.image ?? "",
                   fit: BoxFit.fill,
                   cache: true,

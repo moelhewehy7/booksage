@@ -21,11 +21,11 @@ void main() async {
   await Hive.openBox<BookEntity>(kFeautredbox);
   await Hive.openBox<BookEntity>(kNewestbox);
   Bloc.observer = SimpleBlocObserver();
-  runApp(const Reading());
+  runApp(const BookSage());
 }
 
-class Reading extends StatelessWidget {
-  const Reading({super.key});
+class BookSage extends StatelessWidget {
+  const BookSage({super.key});
 
   @override
   Widget build(BuildContext context) {
