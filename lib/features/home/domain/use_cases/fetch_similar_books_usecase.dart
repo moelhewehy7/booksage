@@ -11,7 +11,7 @@ class FetchSimilarBooksUseCase extends UseCase<String> {
   FetchSimilarBooksUseCase(this.homerepo);
 
   @override
-  Future<Either<Failure, List<BookEntity>>> call([String? categry]) async {
-    return await homerepo.fetchSimilarBooks(categry: categry!);
+  Future<Either<Failure, List<BookEntity>>> call([String? param]) async {
+    return await homerepo.fetchSimilarBooks(categry: param!);
   }
 }

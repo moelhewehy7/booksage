@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:reading/features/home/domain/entities/book_entity.dart';
-import 'package:reading/features/home/domain/use_cases/fetchbysearch_usecase.dart';
+import 'package:reading/features/home/domain/use_cases/fetch_by_search_usecase.dart';
 
 part 'search_state.dart';
 

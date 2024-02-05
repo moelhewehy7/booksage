@@ -31,7 +31,7 @@ class BestSellerSliverListItem extends StatelessWidget {
             Container(
               height: height * 0.16,
               padding: EdgeInsets.zero,
-              width: width * 0.20,
+              width: width * 0.22,
               decoration: BoxDecoration(
                   color: const Color.fromARGB(255, 232, 232, 232),
                   borderRadius: BorderRadius.circular(6)),
