@@ -51,11 +51,11 @@ class OnBoardingViewBody extends StatelessWidget {
         showDoneButton: true,
         done: const Text(
           "Start",
-          style: TextStyle(color: Color(0xFFFFF5EB), fontSize: 16),
+          style: TextStyle(color: Color(0xFFFFFBF7), fontSize: 16),
         ),
         showNextButton: true,
         next: const Icon(Icons.keyboard_arrow_right_outlined,
-            color: Color(0xFFFFF5EB)),
+            color: Color(0xFFFFFBF7)),
         showSkipButton: true,
         skip: const Text(
           "Skip",
@@ -82,8 +82,9 @@ class OnBoardingViewBody extends StatelessWidget {
 
   void onDone(context) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setBool('onboardingShown', false);
-
-    GoRouter.of(context).push(AppRouter.kHomeView);
+    prefs.setBool('onboardingShown', true);
+// It sets the value of 'onboardingShown' to true in shared preferences
+// to indicate that the onboarding has been shown.
+    GoRouter.of(context).pushReplacement(AppRouter.kHomeView);
   }
 }

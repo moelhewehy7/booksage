@@ -12,7 +12,7 @@ class OnBoardingView extends StatefulWidget {
 }
 
 class _OnBoardingViewState extends State<OnBoardingView> {
-  late bool onboardingShown = false;
+  bool onboardingShown = true;
   @override
   void initState() {
     super.initState();
@@ -22,19 +22,18 @@ class _OnBoardingViewState extends State<OnBoardingView> {
   Future<void> checkOnboardingStatus() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
-      onboardingShown = prefs.getBool('onboardingShown') ?? true;
+      onboardingShown = prefs.getBool('onboardingShown') ?? false;
     });
   }
 
-// If prefs.getBool('onboardingShown') returns null, onboardingShown will be assigned true.
-// Otherwise, it will be assigned the value retrieved from prefs.getBool('onboardingShown').
+// If there is no value stored in shared preferences for the key 'onboardingShown',
+//onboardingShown is set to false  (indicating that the onboarding has not been shown yet)
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: onboardingShown ? const OnBoardingViewBody() : const HomeView());
+        body: onboardingShown ? const HomeView() : const OnBoardingViewBody());
   }
 }
-// If onboardingShown is initially false, it will display the onboarding screen (OnBoardingViewBody()).
-// If onboardingShown is initially true, it will directly navigate to HomeView().
-// When onDone is executed, regardless of the initial value,
-// it will update the value in SharedPreferences to false and navigate to HomeView().
+// If onboardingShown is false, the OnBoardingViewBody widget is displayed.
+// Otherwise, the HomeView widget is displayed..
+
