@@ -33,6 +33,9 @@ This Flutter app leverages the Google Books API to provide users with a rich rea
 
 ## Screenshots
 
-Include screenshots or GIFs of your app in action here.
+![Image 1](https://github.com/moelhewehy7/reading_app/assets/130074772/00ed8a42-3684-406b-b7b2-d7c931c88b7b)
+![Image 2](https://github.com/moelhewehy7/reading_app/assets/130074772/b6f69dab-d961-4aeb-b2a3-e00f249bb3b5)
+![Image 3](https://github.com/moelhewehy7/reading_app/assets/130074772/34459525-7bc1-458c-a9c3-17f698bd8dde)
+
 
 
