@@ -17,6 +17,10 @@ This Flutter app leverages the Google Books API to provide users with a rich rea
 - **Flutter**: The app is built using the Flutter framework, allowing for a smooth and responsive user interface across different platforms.
 - **Google Books API**: The app integrates with the Google Books API to fetch book information and enable preview functionality.
 - **API Requests**: The app makes use of asynchronous programming to handle multiple API requests, ensuring a seamless user experience.
+  
+## Splash Screen
+
+The app features a splash screen with a minimalist design, providing a seamless transition into the main app.
 
 ### Future Plans
 
