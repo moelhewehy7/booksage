@@ -36,7 +36,7 @@ class BooksDetailedColumn extends StatelessWidget {
         ),
         Text(
           book.title,
-          style: Styles.textStyle25,
+          style: Styles.textStyle20,
         ),
         const SizedBox(
           height: 2,
@@ -68,7 +68,7 @@ class BooksDetailedColumn extends StatelessWidget {
           height: height * .50,
           width: width * .90,
           decoration: BoxDecoration(
-            color: Color(0xFFE7E7E7),
+            color: const Color(0xFFE7E7E7),
             borderRadius: BorderRadius.circular(8),
           ),
           child: ClipRRect(
@@ -103,7 +103,7 @@ class BooksDetailedColumn extends StatelessWidget {
           textAlign: TextAlign.end,
         ),
         const SizedBox(
-          height: 15,
+          height: 5,
         )
       ],
     );

@@ -61,7 +61,7 @@ class HomeViewBody extends StatelessWidget {
   }
 
   void fetchdata(BuildContext context) {
-    BlocProvider.of<FeaturedBooksCubit>(context).fetchfeaturedBooks;
-    BlocProvider.of<NewestBooksCubit>(context).fetchnewestBooks;
+    BlocProvider.of<FeaturedBooksCubit>(context).fetchfeaturedBooks();
+    BlocProvider.of<NewestBooksCubit>(context).fetchnewestBooks();
   }
 }

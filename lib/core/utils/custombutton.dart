@@ -24,7 +24,7 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 48,
+      height: 45,
       child: TextButton(
         onPressed: onPressed,
         style: TextButton.styleFrom(
@@ -33,7 +33,7 @@ class CustomButton extends StatelessWidget {
             backgroundColor: color,
             shape: RoundedRectangleBorder(borderRadius: borderRadius),
             side: BorderSide(
-                color: Color.fromARGB(255, 229, 167, 146), width: side)),
+                color: const Color.fromARGB(255, 229, 167, 146), width: side)),
         child: Text(
           string,
           textAlign: TextAlign.center,
