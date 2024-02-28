@@ -68,7 +68,7 @@ class BooksDetailedColumn extends StatelessWidget {
           height: height * .50,
           width: width * .90,
           decoration: BoxDecoration(
-            color: const Color.fromARGB(255, 231, 231, 231),
+            color: Color(0xFFE7E7E7),
             borderRadius: BorderRadius.circular(8),
           ),
           child: ClipRRect(
@@ -109,4 +109,3 @@ class BooksDetailedColumn extends StatelessWidget {
     );
   }
 }
-// "You can also like"

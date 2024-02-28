@@ -25,7 +25,7 @@ class SearchResultListView extends StatelessWidget {
             (BuildContext context, int i) {
               return Padding(
                 padding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+                    const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                 child: BestSellerSliverListItem(
                   height: height,
                   width: width,
