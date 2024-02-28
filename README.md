@@ -11,7 +11,9 @@ This Flutter app leverages the Google Books API to provide users with a rich rea
 - **Discover Similar Books**: By analyzing user preferences, the app suggests similar books, helping users discover new reads.
 - **Introduction Screen:** A welcoming introduction screen to guide users. It is shown only once using SharedPreferences.
 - **Dynamic Home Page**: The home page of the app makes two API requests to ensure that users have access to the latest and most relevant content.
-
+- **Categories in Search Page**: Users can now browse books by categories, enhancing the search experience and making it easier to find relevant content.
+- **Refresh Indicator**: Added a refresh indicator to the home page, allowing users to manually refresh the content for the latest updates.
+ 
 ### Technologies Used
 
 - **Flutter**: The app is built using the Flutter framework, allowing for a smooth and responsive user interface across different platforms.
@@ -25,9 +27,7 @@ The app features a splash screen with a minimalist design, providing a seamless 
 
 ### Future Plans
 
-- **Enhanced Search**: Implement advanced search filters to allow users to refine their search results.
 - **Personalized Recommendations**: Utilize user data to provide personalized book recommendations.
-- **Social Features**: Introduce social sharing features to allow users to share their favorite books with friends.
 
 ## Getting Started
 
@@ -38,9 +38,9 @@ The app features a splash screen with a minimalist design, providing a seamless 
 
 ## Screenshots
 
-<img src="https://github.com/moelhewehy7/reading_app/assets/130074772/34459525-7bc1-458c-a9c3-17f698bd8dde" width="150" height="300">
-<img src="https://github.com/moelhewehy7/reading_app/assets/130074772/00ed8a42-3684-406b-b7b2-d7c931c88b7b" width="150" height="300">
-<img src="https://github.com/moelhewehy7/reading_app/assets/130074772/b6f69dab-d961-4aeb-b2a3-e00f249bb3b5" width="150" height="300">
+<img src="https://github.com/moelhewehy7/reading/assets/130074772/76ca6e24-af3e-4e2e-8e47-6c948c2bfe17" width="150" height="300">
+<img src="https://github.com/moelhewehy7/reading/assets/130074772/f6311e0a-0513-4401-bb43-450b33246412" width="150" height="300">
+<img src="https://github.com/moelhewehy7/reading/assets/130074772/7f5f530f-4493-43a1-807c-63db3101a798" width="150" height="300">
 
 
 
