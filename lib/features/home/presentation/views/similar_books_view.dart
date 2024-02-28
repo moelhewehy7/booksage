@@ -27,7 +27,7 @@ class SimilarBooksView extends StatelessWidget {
                   ),
                   Text(bookEntity.description ?? "bookEntity not available",
                       style: Styles.textStyle25
-                          .copyWith(fontWeight: FontWeight.w600, fontSize: 20))
+                          .copyWith(fontWeight: FontWeight.w500, fontSize: 17))
                 ],
               ),
             ))

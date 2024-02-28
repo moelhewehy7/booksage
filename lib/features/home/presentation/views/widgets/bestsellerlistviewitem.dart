@@ -67,7 +67,7 @@ class BestSellerSliverListItem extends StatelessWidget {
                     bookenitity.title,
                     overflow: TextOverflow.ellipsis,
                     maxLines: 2,
-                    style: Styles.textStyle20,
+                    style: Styles.textStyle18,
                   ),
                   Text(bookenitity.authorName ?? "Author not available",
                       style: Styles.textStyle14,
@@ -79,7 +79,7 @@ class BestSellerSliverListItem extends StatelessWidget {
                           textAlign: TextAlign.justify,
                           style: GoogleFonts.robotoSlab(
                               textStyle:
-                                  Styles.textStyle20.copyWith(fontSize: 18))),
+                                  Styles.textStyle20.copyWith(fontSize: 16))),
                       const BookRating(
                         rating: 0,
                         count: 0,
