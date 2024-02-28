@@ -17,6 +17,7 @@ class HomeViewBody extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return RefreshIndicator(
+      displacement: height * 0.1,
       color: kprimarycolor,
       onRefresh: () async {
         await Future.delayed(const Duration(seconds: 3));

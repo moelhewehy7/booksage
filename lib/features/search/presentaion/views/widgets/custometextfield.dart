@@ -11,7 +11,7 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      onChanged: (value) {
+      onFieldSubmitted: (value) {
         BlocProvider.of<SearchCubit>(context).fetchBookbysearch(book: value);
       },
       style: const TextStyle(

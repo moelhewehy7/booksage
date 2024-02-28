@@ -37,7 +37,7 @@ class _BookCategoryListView extends State<BookCategoryListView> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      padding: EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 16),
       scrollDirection: Axis.horizontal,
       itemCount: categories.length,
       itemBuilder: (BuildContext context, int index) {
