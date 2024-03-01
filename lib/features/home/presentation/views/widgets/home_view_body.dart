@@ -6,7 +6,7 @@ import 'package:reading/features/home/presentation/manager/Fetch%20feautred%20bo
 import 'package:reading/features/home/presentation/views/widgets/sliver_appbar.dart';
 import '../../manager/newest books cubit/newest_books_cubit.dart';
 import 'bestsellersliverlist.dart';
-import 'featuredbookslistview.dart';
+import 'featured_books_listview.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});

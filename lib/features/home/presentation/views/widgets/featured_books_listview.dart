@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:reading/core/utils/widgets/custom_error.dart';
 import 'package:reading/features/home/domain/entities/book_entity.dart';
-import 'package:reading/features/home/presentation/views/widgets/shimmerbooklistviewitem.dart';
+import 'package:reading/features/home/presentation/views/widgets/shimmer_book_listviewitem.dart';
 import '../../manager/Fetch feautred books cubit/featured_books_cubit.dart';
-import 'fetchfeaturedbookslistview.dart';
+import 'fetch_featured_books_listview.dart';
 
 class FeaturedBooksListView extends StatefulWidget {
   const FeaturedBooksListView(

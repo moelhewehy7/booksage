@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../domain/entities/book_entity.dart';
-import 'paddedbooksdetailedcolumn.dart';
-import 'similierbookslistview.dart';
+import 'books_detailed_column.dart';
+import 'similier_books_listview.dart';
 
 class BookDetailesViewBody extends StatelessWidget {
   const BookDetailesViewBody({super.key, required this.bookentity});

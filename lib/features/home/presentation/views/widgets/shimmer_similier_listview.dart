@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'shimmersimilierlistviewitem.dart';
+import 'shimmer_similier_listview_item.dart';
 
 class ShimmerSimilierBookListView extends StatelessWidget {
   const ShimmerSimilierBookListView(

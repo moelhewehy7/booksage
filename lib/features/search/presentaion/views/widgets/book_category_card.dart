@@ -14,28 +14,29 @@ class BookCategoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return isActive
-        ? Padding(
-            padding: const EdgeInsets.only(right: 5),
+        ? Card(
+            elevation: 2,
+            margin: const EdgeInsets.all(10),
             child: CustomButton(
-              side: 3,
               string: category,
               borderRadius: const BorderRadius.all(Radius.circular(20)),
               onPressed: onpressed,
-              color: const Color(0xFF5A4037),
+              color: const Color.fromARGB(255, 81, 39, 26),
               textcolor: const Color(0xFFFFFFFF),
               fontSize: 12,
               letterSpacing: 1,
               foregroundColor: kprimarycolor,
             ),
           )
-        : Padding(
-            padding: const EdgeInsets.only(right: 5),
+        : Card(
+            elevation: 2,
+            margin: const EdgeInsets.all(10),
             child: CustomButton(
               string: category,
               borderRadius: const BorderRadius.all(Radius.circular(20)),
               onPressed: onpressed,
-              color: const Color(0xFF5A4037),
-              textcolor: const Color(0xFFFFFFFF),
+              color: Color.fromARGB(255, 255, 243, 239),
+              textcolor: kprimarycolor,
               fontSize: 12,
               letterSpacing: 1,
               foregroundColor: kprimarycolor,

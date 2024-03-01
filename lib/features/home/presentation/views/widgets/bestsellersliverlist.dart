@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:reading/core/utils/widgets/custom_error.dart';
 import 'package:reading/features/home/presentation/manager/newest%20books%20cubit/newest_books_cubit.dart';
 import 'bestsellerlistviewitem.dart';
-import 'shimmerbestsellersliverlistitem.dart';
+import 'shimmer_best_seller_sliverlistitem.dart';
 
 class NewestBooksSliverList extends StatelessWidget {
   const NewestBooksSliverList(

@@ -35,7 +35,7 @@ class SearchViewBody extends StatelessWidget {
                 height: 10,
               ),
               SizedBox(
-                height: height * 0.05,
+                height: height * 0.06,
                 child: const BookCategoryListView(),
               ),
               const SizedBox(

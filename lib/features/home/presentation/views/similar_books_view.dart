@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:reading/core/utils/styles.dart';
 import 'package:reading/features/home/domain/entities/book_entity.dart';
 
-import 'widgets/paddedbooksdetailedcolumn.dart';
+import 'widgets/books_detailed_column.dart';
 
 class SimilarBooksView extends StatelessWidget {
   const SimilarBooksView({super.key, required this.bookEntity});

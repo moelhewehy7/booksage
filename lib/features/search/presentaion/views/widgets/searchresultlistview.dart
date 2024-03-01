@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:reading/features/home/presentation/manager/search%20cubit/search_cubit.dart';
 import '../../../../../core/utils/widgets/custom_error.dart';
 import '../../../../home/presentation/views/widgets/bestsellerlistviewitem.dart';
-import '../../../../home/presentation/views/widgets/shimmerbestsellersliverlistitem.dart';
+import '../../../../home/presentation/views/widgets/shimmer_best_seller_sliverlistitem.dart';
 
 class SearchResultListView extends StatelessWidget {
   const SearchResultListView({

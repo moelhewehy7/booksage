@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:reading/features/home/presentation/views/widgets/featuredbooklistviewitem.dart';
+import 'package:reading/features/home/presentation/views/widgets/featured_book_listview_item.dart';
 import '../../../../../core/utils/app_router.dart';
 import '../../../domain/entities/book_entity.dart';
 
@@ -21,22 +21,19 @@ class FetchFeaturedBooksListView extends StatelessWidget {
     return SizedBox(
       height: height * 0.25,
       child: ListView.builder(
-        padding: const EdgeInsets.only(left: 6, right: 10),
+        padding: const EdgeInsets.only(left: 6, right: 6),
         itemCount: books.length,
         scrollDirection: Axis.horizontal,
         itemBuilder: (BuildContext context, int i) {
-          return Padding(
-            padding: const EdgeInsets.only(left: 2, top: 6),
-            child: GestureDetector(
-              onTap: () {
-                GoRouter.of(context)
-                    .push(AppRouter.kbookdetailesview, extra: books[i]);
-              },
-              child: FeaturedBookListViewItem(
-                width: width * 0.3,
-                height: height * 0.25,
-                imageurl: books[i].image ?? " ",
-              ),
+          return GestureDetector(
+            onTap: () {
+              GoRouter.of(context)
+                  .push(AppRouter.kbookdetailesview, extra: books[i]);
+            },
+            child: FeaturedBookListViewItem(
+              width: width * 0.31,
+              height: height * 0.25,
+              imageurl: books[i].image ?? " ",
             ),
           );
         },

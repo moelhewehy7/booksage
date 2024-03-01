@@ -16,11 +16,11 @@ class FeaturedBookListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 2,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(6),
-      ),
+      elevation: 8,
+      shadowColor: Colors.brown,
+      margin: EdgeInsets.symmetric(horizontal: 7, vertical: 15),
       child: Container(
+        padding: EdgeInsets.only(right: 5),
         width: width,
         height: height,
         decoration: BoxDecoration(
