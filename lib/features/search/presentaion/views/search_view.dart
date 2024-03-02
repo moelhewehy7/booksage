@@ -24,6 +24,12 @@ class _SearchViewState extends State<SearchView> {
 
     return Scaffold(
         appBar: AppBar(
+          flexibleSpace: FlexibleSpaceBar(
+            // prevent the SliverAppBar from changing its background color to a darker shade
+            background: Container(
+              color: Colors.white,
+            ),
+          ),
           leading: IconButton(
               onPressed: () {
                 Navigator.of(context).pop();

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "267698667354",
+    "project_id": "booksage-64a03",
+    "storage_bucket": "booksage-64a03.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:267698667354:android:d1d212132294d702537d63",
+        "android_client_info": {
+          "package_name": "com.example.reading"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdfQvc6pk21ogOxrETI6yTcow_5SH11Og"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

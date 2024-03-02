@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:reading/constants.dart';
 import 'package:reading/core/utils/styles.dart';
 import 'package:reading/features/home/presentation/manager/Fetch%20feautred%20books%20cubit/featured_books_cubit.dart';
-import 'package:reading/features/home/presentation/views/widgets/sliver_appbar.dart';
 import '../../manager/newest books cubit/newest_books_cubit.dart';
 import 'bestsellersliverlist.dart';
 import 'featured_books_listview.dart';
@@ -17,7 +16,6 @@ class HomeViewBody extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return RefreshIndicator(
-      displacement: height * 0.1,
       color: kprimarycolor,
       onRefresh: () async {
         await Future.delayed(const Duration(seconds: 3));
@@ -32,7 +30,6 @@ class HomeViewBody extends StatelessWidget {
         scrollDirection: Axis.vertical,
         physics: const BouncingScrollPhysics(),
         slivers: [
-          const CustomSliverAppBar(),
           SliverToBoxAdapter(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

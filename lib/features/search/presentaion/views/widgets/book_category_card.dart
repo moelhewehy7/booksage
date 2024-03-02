@@ -16,7 +16,7 @@ class BookCategoryCard extends StatelessWidget {
     return isActive
         ? Card(
             elevation: 2,
-            margin: const EdgeInsets.all(10),
+            margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
             child: CustomButton(
               string: category,
               borderRadius: const BorderRadius.all(Radius.circular(20)),
@@ -30,7 +30,7 @@ class BookCategoryCard extends StatelessWidget {
           )
         : Card(
             elevation: 2,
-            margin: const EdgeInsets.all(10),
+            margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
             child: CustomButton(
               string: category,
               borderRadius: const BorderRadius.all(Radius.circular(20)),

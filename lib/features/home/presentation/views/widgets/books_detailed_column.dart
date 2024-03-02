@@ -4,7 +4,6 @@ import 'package:reading/core/utils/styles.dart';
 import 'package:reading/features/home/domain/entities/book_entity.dart';
 import 'package:reading/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:reading/features/home/presentation/views/widgets/books_action_button.dart';
-import 'package:reading/features/home/presentation/views/widgets/custom_appbar.dart';
 
 class BooksDetailedColumn extends StatelessWidget {
   const BooksDetailedColumn(
@@ -23,17 +22,6 @@ class BooksDetailedColumn extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const SizedBox(
-          height: 40,
-        ),
-        CustomAppBar(
-          ontap: () {
-            Navigator.of(context).pop();
-          },
-        ),
-        const SizedBox(
-          height: 8,
-        ),
         Text(
           book.title,
           style: Styles.textStyle20,

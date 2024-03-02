@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -12,8 +13,13 @@ import 'package:reading/features/home/domain/use_cases/fetch_featured_books_usec
 import 'package:reading/features/home/domain/use_cases/fetch_newst_books_usecase.dart';
 import 'package:reading/features/home/presentation/manager/Fetch%20feautred%20books%20cubit/featured_books_cubit.dart';
 import 'package:reading/features/home/presentation/manager/newest%20books%20cubit/newest_books_cubit.dart';
+import 'package:reading/firebase_options.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   setupServiceLocator();
   await Hive.initFlutter();
   Hive.registerAdapter(BookEntityAdapter());
@@ -46,7 +52,7 @@ class Reading extends StatelessWidget {
       child: MaterialApp.router(
         routerConfig: AppRouter.router,
         debugShowCheckedModeBanner: false,
-        theme: ThemeData.light()
+        theme: ThemeData(brightness: Brightness.light)
             .copyWith(textTheme: GoogleFonts.robotoSlabTextTheme()),
         // ignore: prefer_const_constructors
       ),

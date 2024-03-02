@@ -12,27 +12,31 @@ class CustomSliverAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
+      flexibleSpace: FlexibleSpaceBar(
+        // prevent the SliverAppBar from changing its background color to a darker shade
+        background: Container(
+          color: Color(0xFFfffbfe),
+        ),
+      ),
       automaticallyImplyLeading: false,
       pinned: true,
       elevation: 0,
-      title: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Image.asset(
-            AssetsData.bookSage,
-            scale: 11,
-          ),
-          IconButton(
-            icon: const Icon(
-              FontAwesomeIcons.magnifyingGlass,
-              size: 20,
-            ),
-            onPressed: () {
-              GoRouter.of(context).push(AppRouter.ksearchview);
-            },
-          ),
-        ],
+      title: Image.asset(
+        AssetsData.bookSage,
+        scale: 11,
       ),
+      centerTitle: true,
+      actions: [
+        IconButton(
+          icon: const Icon(
+            FontAwesomeIcons.magnifyingGlass,
+            size: 20,
+          ),
+          onPressed: () {
+            GoRouter.of(context).push(AppRouter.ksearchview);
+          },
+        )
+      ],
     );
   }
 }

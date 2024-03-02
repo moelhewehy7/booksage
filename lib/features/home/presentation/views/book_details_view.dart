@@ -24,6 +24,42 @@ class _BookDetailesViewState extends State<BookDetailesView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        flexibleSpace: FlexibleSpaceBar(
+          // prevent the SliverAppBar from changing its background color to a darker shade
+          background: Container(
+            color: const Color(0xFFfffbfe),
+          ),
+        ),
+        automaticallyImplyLeading: false,
+        elevation: 0,
+        title: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 6),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              InkWell(
+                onTap: () {
+                  Navigator.of(context).pop();
+                },
+                child: const Padding(
+                  padding: EdgeInsets.zero, // Adjust padding as needed
+                  child: Icon(Icons.keyboard_backspace, size: 30),
+                ),
+              ),
+              InkWell(
+                onTap: () {
+                  // Handle cart button press
+                },
+                child: const Padding(
+                  padding: EdgeInsets.zero, // Adjust padding as needed
+                  child: Icon(Icons.shopping_cart, size: 30),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
       body: BookDetailesViewBody(
         bookentity: widget.bookentity,
       ),
