@@ -1,4 +1,4 @@
-# reading
+we# reading
 
 ## Project Description
 
@@ -36,7 +36,7 @@ The app features a splash screen with a minimalist design, providing a seamless 
 3. Run `flutter pub get` to install dependencies.
 4. Run the app on your preferred emulator or device.
 
-## Screenshots updating*
+## Screenshots, the app is currently being updated*
 <img src="https://github.com/moelhewehy7/reading/assets/130074772/7f5f530f-4493-43a1-807c-63db3101a798" width="150" height="300">
 <img src="https://github.com/moelhewehy7/reading/assets/130074772/f6311e0a-0513-4401-bb43-450b33246412" width="150" height="300">
 <img src="https://github.com/moelhewehy7/reading/assets/130074772/76ca6e24-af3e-4e2e-8e47-6c948c2bfe17" width="150" height="300">
