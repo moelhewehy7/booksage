@@ -5,7 +5,7 @@ import 'package:reading/features/home/data/repos/home_repo_impl.dart';
 import 'package:reading/features/home/domain/entities/book_entity.dart';
 import 'package:reading/features/home/domain/use_cases/fetch_similar_books_usecase.dart';
 import 'package:reading/features/home/domain/use_cases/fetch_by_search_usecase.dart';
-import 'package:reading/features/home/presentation/manager/search%20cubit/search_cubit.dart';
+import 'package:reading/features/search/presentaion/manager/search%20cubit/search_cubit.dart';
 import 'package:reading/features/home/presentation/views/similar_books_view.dart';
 import 'package:reading/features/onboarding/presentation/views/onboardingview.dart';
 import 'package:reading/features/search/presentaion/views/search_view.dart';
