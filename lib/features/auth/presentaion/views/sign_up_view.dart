@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'package:icons_plus/icons_plus.dart';
 import 'package:reading/animations/fade_in_slide.dart';
 import 'package:reading/features/auth/presentaion/views/widgets/button.dart';
@@ -14,7 +12,7 @@ class SignUpView extends StatefulWidget {
 }
 
 class _SignUpViewState extends State<SignUpView> {
-  ValueNotifier<bool> termsCheck = ValueNotifier(false);
+  bool termsAccepted = false;
 
   @override
   Widget build(BuildContext context) {
@@ -65,31 +63,23 @@ class _SignUpViewState extends State<SignUpView> {
             child: PasswordField(),
           ),
           const SizedBox(height: 20),
-          FadeInSlide(
-            duration: .7,
-            child: Row(
-              children: [
-                ValueListenableBuilder(
-                  valueListenable: termsCheck,
-                  builder: (context, value, child) {
-                    return CupertinoCheckbox(
-                      inactiveColor: isDark ? Colors.white : Colors.black87,
-                      value: value,
-                      onChanged: (_) {
-                        termsCheck.value = !termsCheck.value;
-                      },
-                    );
-                  },
-                ),
-              ],
-            ),
-          ),
+          // FadeInSlide(
+          //   duration: .7,
+          //   child: CheckboxListTile(
+          //     controlAffinity: ListTileControlAffinity.leading,
+          //     title: Text('Accept Terms and Conditions'),
+          //     value: termsAccepted,
+          //     onChanged: (newValue) {
+          //       termsAccepted = newValue ?? false;
+          //       setState(() {});
+          //     },
+          //   ),
+          // ),
           const SizedBox(height: 20),
           FadeInSlide(
             duration: .8,
             child: Container(),
           ),
-          const SizedBox(height: 30),
           const FadeInSlide(
             duration: .9,
             child: Row(
@@ -108,7 +98,7 @@ class _SignUpViewState extends State<SignUpView> {
               ],
             ),
           ),
-          const SizedBox(height: 20),
+          SizedBox(height: height * 0.07),
           FadeInSlide(
             duration: 1.0,
             child: LoginButton(
@@ -118,18 +108,7 @@ class _SignUpViewState extends State<SignUpView> {
             ),
           ),
           SizedBox(height: height * 0.02),
-          FadeInSlide(
-            duration: 1.1,
-            child: LoginButton(
-              icon: Icon(
-                Icons.apple,
-                color: isDark ? Colors.white : Colors.black,
-              ),
-              text: "Continue with Apple",
-              onPressed: () {},
-            ),
-          ),
-          SizedBox(height: height * 0.02),
+
           FadeInSlide(
             duration: 1.2,
             child: LoginButton(
@@ -147,6 +126,7 @@ class _SignUpViewState extends State<SignUpView> {
               onPressed: () {},
             ),
           ),
+          SizedBox(height: height * 0.07),
         ],
       ),
       // persistentFooterAlignment: AlignmentDirectional.center,
@@ -162,21 +142,9 @@ class _SignUpViewState extends State<SignUpView> {
             ),
           ),
           child: FilledButton(
-            onPressed: () async {
-              // LoadingScreen.instance()
-              //     .show(context: context, text: "Sign Up...");
-              // await Future.delayed(const Duration(seconds: 1));
-              // for (var i = 0; i <= 100; i++) {
-              //   LoadingScreen.instance().show(context: context, text: '$i...');
-              //   await Future.delayed(const Duration(milliseconds: 10));
-              // }
-              // LoadingScreen.instance()
-              //     .show(context: context, text: "Signed Up New User");
-              // await Future.delayed(const Duration(seconds: 1));
-              // LoadingScreen.instance().hide();
-              // context.goNamed(AppRoutes.signIn.name);
-            },
+            onPressed: () async {},
             style: FilledButton.styleFrom(
+              backgroundColor: const Color(0xFF7B574B),
               fixedSize: const Size(double.infinity, 50),
             ),
             child: const Text(

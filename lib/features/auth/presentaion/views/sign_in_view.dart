@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:reading/animations/fade_in_slide.dart';
+import 'package:reading/constants.dart';
 import 'package:reading/features/auth/presentaion/views/widgets/button.dart';
 import 'package:reading/features/auth/presentaion/views/widgets/textfields.dart';
 
@@ -84,7 +85,10 @@ class _SignInViewState extends State<SignInView> {
                   const Spacer(),
                   TextButton(
                     onPressed: () {},
-                    child: const Text("Forgot Password?"),
+                    child: const Text(
+                      "Forgot Password?",
+                      style: TextStyle(color: kprimarycolor),
+                    ),
                   ),
                 ],
               ),
@@ -108,24 +112,12 @@ class _SignInViewState extends State<SignInView> {
                 ],
               ),
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: height * 0.04),
             FadeInSlide(
               duration: 1,
               child: LoginButton(
                 icon: Brand(Brands.google, size: 25),
                 text: "Continue with Google",
-                onPressed: () {},
-              ),
-            ),
-            SizedBox(height: height * 0.02),
-            FadeInSlide(
-              duration: 1.1,
-              child: LoginButton(
-                icon: Icon(
-                  Icons.apple,
-                  color: isDark ? Colors.white : Colors.black,
-                ),
-                text: "Continue with Apple",
                 onPressed: () {},
               ),
             ),
@@ -142,19 +134,13 @@ class _SignInViewState extends State<SignInView> {
             FadeInSlide(
               duration: 1.3,
               child: LoginButton(
-                icon: Brand(Brands.twitter, size: 25),
-                text: "Continue with Twitter",
+                icon: Brand(Brands.twitterx, size: 25),
+                text: "Continue with X",
                 onPressed: () {},
               ),
             ),
-          ]
-          // .animate(interval: 10.ms).slide(
-          //     begin: const Offset(0, -40),
-          //     end: Offset.zero,
-          //     // curve: Curves.easeOut,
-          //     duration: 1200.ms,
-          //     delay: 200.ms),
-          ),
+            SizedBox(height: height * 0.04),
+          ]),
       bottomNavigationBar: FadeInSlide(
         duration: 1,
         direction: FadeSlideDirection.btt,
@@ -167,22 +153,9 @@ class _SignInViewState extends State<SignInView> {
             ),
           ),
           child: FilledButton(
-            onPressed: () async {
-              // final goRouter = GoRouter.of(context);
-              // LoadingScreen.instance()
-              //     .show(context: context, text: "Sign In...");
-              // await Future.delayed(const Duration(seconds: 1));
-              // for (var i = 0; i <= 100; i++) {
-              //   LoadingScreen.instance().show(context: context, text: '$i...');
-              //   await Future.delayed(const Duration(milliseconds: 10));
-              // }
-              // LoadingScreen.instance()
-              //     .show(context: context, text: "Signed In Successfully");
-              // await Future.delayed(const Duration(seconds: 1));
-              // LoadingScreen.instance().hide();
-              // goRouter.goNamed(AppRoutes.home.name);
-            },
+            onPressed: () async {},
             style: FilledButton.styleFrom(
+              backgroundColor: const Color(0xFF7B574B),
               fixedSize: const Size(double.infinity, 50),
             ),
             child: const Text(

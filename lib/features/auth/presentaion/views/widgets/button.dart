@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:reading/constants.dart';
 
 class LoginButton extends StatelessWidget {
   final VoidCallback onPressed;
@@ -22,20 +23,16 @@ class LoginButton extends StatelessWidget {
         fixedSize: const Size.fromHeight(50),
         padding: const EdgeInsets.symmetric(horizontal: 15),
       ),
-      child: Stack(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Align(
-              alignment: Alignment.center,
-              child: Text(
-                text,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: brightness == Brightness.dark
-                      ? Colors.white
-                      : Colors.black,
-                ),
-              )),
-          Align(alignment: Alignment.centerLeft, child: icon),
+          icon,
+          Spacer(),
+          Text(
+            text,
+            style: TextStyle(fontWeight: FontWeight.bold, color: kprimarycolor),
+          ),
+          Spacer()
         ],
       ),
     );

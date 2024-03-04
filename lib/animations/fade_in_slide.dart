@@ -26,7 +26,7 @@ class FadeInSlide extends StatefulWidget {
 
 class _FadeInSlideState extends State<FadeInSlide>
     with TickerProviderStateMixin {
-  late AnimationController controller;
+  late AnimationController animationController;
   late Animation<double> opacityAnimation;
   late Animation<double> inAnimation;
 // controller: Manages the duration and playback of animations.
@@ -36,29 +36,31 @@ class _FadeInSlideState extends State<FadeInSlide>
   void initState() {
     super.initState();
 
-    controller = AnimationController(
+    animationController = AnimationController(
         duration: Duration(milliseconds: (1000 * widget.duration).toInt()),
         vsync: this);
+
     inAnimation = Tween<double>(begin: -widget.fadeOffset, end: 0).animate(
       CurvedAnimation(
-        parent: controller,
+        parent: animationController,
         curve: widget.curve,
       ),
     )..addListener(() {
         setState(() {});
       });
 
-    opacityAnimation = Tween<double>(begin: 0, end: 1).animate(controller)
-      ..addListener(() {
-        setState(() {});
-      });
+    opacityAnimation =
+        Tween<double>(begin: 0, end: 1).animate(animationController)
+          ..addListener(() {
+            setState(() {});
+          });
   }
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
     // Retrieves the size of the current screen
-    controller.forward();
+    animationController.forward();
     // start the animation every time the widget is rebuilt
     return Transform.translate(
       offset: switch (widget.direction) {
@@ -81,7 +83,10 @@ class _FadeInSlideState extends State<FadeInSlide>
 
   @override
   void dispose() {
-    controller.dispose();
+    animationController.dispose();
     super.dispose();
   }
 }
+// using addListener gives you more control over the animation updates and UI changes,
+// but it requires more boilerplate code. Using AnimatedBuilder  aligns better with 
+// Flutter's declarative programming model, making your code cleaner and easier to understand.

@@ -1,6 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:reading/core/utils/service_locator.dart';
+import 'package:reading/features/auth/presentaion/views/get_started_view.dart';
+import 'package:reading/features/auth/presentaion/views/sign_in_view.dart';
+import 'package:reading/features/auth/presentaion/views/sign_up_view.dart';
 import 'package:reading/features/home/data/repos/home_repo_impl.dart';
 import 'package:reading/features/home/domain/entities/book_entity.dart';
 import 'package:reading/features/home/domain/use_cases/fetch_similar_books_usecase.dart';
@@ -21,6 +25,9 @@ abstract class AppRouter {
   static const kbookdetailesview = '/bookdetailesview';
   static const ksearchview = '/searchview';
   static const ksimilarview = '/similarview';
+  static const kGetStartedView = '/GetStartedView ';
+  static const kSignin = '/Signin';
+  static const kSignup = '/Signup';
   static final router = GoRouter(
     routes: [
       GoRoute(
@@ -59,7 +66,22 @@ abstract class AppRouter {
         path: ksimilarview,
         builder: (context, state) =>
             SimilarBooksView(bookEntity: state.extra as BookEntity),
+      ),
+      GoRoute(
+        path: kGetStartedView,
+        builder: (context, state) => const GetStartedView(),
+      ),
+      GoRoute(
+        path: kSignin,
+        pageBuilder: (context, state) =>
+            const CupertinoPage(child: SignInView()),
+      ),
+      GoRoute(
+        path: kSignup,
+        pageBuilder: (context, state) =>
+            const CupertinoPage(child: SignUpView()),
       )
     ],
   );
 }
+// pageBuilder used to animate the transition between screens.

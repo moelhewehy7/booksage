@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:reading/features/auth/presentaion/views/get_started_view.dart';
 import 'package:reading/features/home/presentation/views/home_view.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -31,7 +32,9 @@ class _OnBoardingViewState extends State<OnBoardingView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: onboardingShown ? const HomeView() : const OnBoardingViewBody());
+        body: onboardingShown
+            ? const GetStartedView()
+            : const OnBoardingViewBody());
   }
 }
 // If onboardingShown is false, the OnBoardingViewBody widget is displayed.

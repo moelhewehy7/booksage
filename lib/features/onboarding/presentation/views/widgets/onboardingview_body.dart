@@ -85,6 +85,7 @@ class OnBoardingViewBody extends StatelessWidget {
     prefs.setBool('onboardingShown', true);
 // It sets the value of 'onboardingShown' to true in shared preferences
 // to indicate that the onboarding has been shown.
-    GoRouter.of(context).pushReplacement(AppRouter.kHomeView);
+
+    GoRouter.of(context).pushReplacement(AppRouter.kGetStartedView);
   }
 }
