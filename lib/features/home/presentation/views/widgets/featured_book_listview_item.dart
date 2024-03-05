@@ -18,9 +18,9 @@ class FeaturedBookListViewItem extends StatelessWidget {
     return Card(
       elevation: 8,
       shadowColor: Colors.brown,
-      margin: EdgeInsets.symmetric(horizontal: 7, vertical: 15),
+      margin: const EdgeInsets.symmetric(horizontal: 7, vertical: 15),
       child: Container(
-        padding: EdgeInsets.only(right: 5),
+        padding: const EdgeInsets.only(right: 5),
         width: width,
         height: height,
         decoration: BoxDecoration(

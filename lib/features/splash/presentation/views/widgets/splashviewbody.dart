@@ -28,8 +28,8 @@ class _SplashViewbodyState extends State<SplashViewbody>
 
   @override
   void dispose() {
-    super.dispose();
     animationController.dispose();
+    super.dispose();
   }
   //  the dispose() method is used to release resources, like animation controllers,
   //  when a widget is removed from the screen. It prevents memory leaks and ensures proper cleanup

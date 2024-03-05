@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:reading/features/home/presentation/views/widgets/featured_book_listview_item.dart';
+import 'package:booksage/features/home/presentation/views/widgets/featured_book_listview_item.dart';
 import '../../../../../core/utils/app_router.dart';
 import '../../../domain/entities/book_entity.dart';
 

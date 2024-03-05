@@ -1,10 +1,14 @@
+import 'package:booksage/core/utils/widgets/signout_alert_dialgo.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
-import 'package:reading/constants.dart';
-import 'package:reading/core/utils/assets.dart';
+import 'package:booksage/constants.dart';
+import 'package:booksage/core/utils/assets.dart';
+import 'package:iconly/iconly.dart';
 
 import '../../../../core/utils/app_router.dart';
+import '../../../auth/presentaion/cubit/auth_cubit.dart';
 import 'widgets/home_view_body.dart';
 
 class HomeView extends StatelessWidget {
@@ -17,7 +21,7 @@ class HomeView extends StatelessWidget {
         flexibleSpace: FlexibleSpaceBar(
           // prevent the SliverAppBar from changing its background color to a darker shade
           background: Container(
-            color: Color(0xFFfffbfe),
+            color: const Color(0xFFfffbfe),
           ),
         ),
         elevation: 0,
@@ -37,14 +41,15 @@ class HomeView extends StatelessWidget {
             },
           )
         ],
-        iconTheme: IconThemeData(color: kprimarycolor),
+        iconTheme: const IconThemeData(color: kprimarycolor),
       ),
       drawer: Drawer(
-        backgroundColor: Color(0xFF4A342D),
+        backgroundColor: const Color(0xFF4A342D),
         child: Column(children: [
-          DrawerHeader(
+          const DrawerHeader(
               child: CircleAvatar(
-            radius: 40,
+            radius: 60,
+            child: Icon(IconlyLight.profile),
           )),
           MyListTile(
             icon: Icons.home,
@@ -60,28 +65,33 @@ class HomeView extends StatelessWidget {
               GoRouter.of(context).push(AppRouter.ksearchview);
             },
           ),
-          MyListTile(
-            icon: Icons.favorite,
-            text: "Favourties",
-            ontap: () {},
-          ),
+          // MyListTile(
+          //   icon: Icons.favorite,
+          //   text: "Favourties",
+          //   ontap: () {},
+          // ),
           MyListTile(
             icon: Icons.person,
             text: "Profile",
-            ontap: () {},
+            ontap: () {
+              GoRouter.of(context).push(AppRouter.kEditProfile);
+              BlocProvider.of<AuthCubit>(context).fetchUserData();
+            },
           ),
-          Spacer(),
+          const Spacer(),
           MyListTile(
             icon: Icons.logout,
             text: "LogOut",
-            ontap: () {},
+            ontap: () async {
+              signoutAlertdialog(context);
+            },
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           )
         ]),
       ),
-      body: HomeViewBody(),
+      body: const HomeViewBody(),
     );
   }
 }
@@ -105,7 +115,7 @@ class MyListTile extends StatelessWidget {
         leading: Icon(icon, color: Colors.white, size: 25),
         title: Text(
           text,
-          style: TextStyle(color: Colors.white, fontSize: 16),
+          style: const TextStyle(color: Colors.white, fontSize: 16),
         ),
       ),
     );

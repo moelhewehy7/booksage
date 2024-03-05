@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:reading/constants.dart';
-import 'package:reading/features/home/data/models/book_model/book_model.dart';
+import 'package:booksage/constants.dart';
+import 'package:booksage/features/home/data/models/book_model/book_model.dart';
 import '../../../../core/function/cache_books._data.dart';
 import '../../../../core/utils/api._service.dart';
 import '../../domain/entities/book_entity.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:reading/core/utils/styles.dart';
+import 'package:booksage/core/utils/styles.dart';
 import 'package:readmore/readmore.dart';
 
 import '../../../../../constants.dart';

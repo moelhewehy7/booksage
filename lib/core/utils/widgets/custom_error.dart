@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:reading/core/utils/styles.dart';
+import 'package:booksage/core/utils/styles.dart';
 
 class CustomError extends StatelessWidget {
   const CustomError({super.key, required this.errormessage});

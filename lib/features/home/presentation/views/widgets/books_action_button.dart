@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:reading/core/function/lunch_widget.dart';
-import 'package:reading/core/utils/custombutton.dart';
-import 'package:reading/features/home/domain/entities/book_entity.dart';
+import 'package:booksage/core/function/lunch_widget.dart';
+import 'package:booksage/core/utils/widgets/custombutton.dart';
+import 'package:booksage/features/home/domain/entities/book_entity.dart';
 
 import '../../../../../constants.dart';
 

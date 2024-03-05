@@ -2,8 +2,8 @@ import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:reading/core/utils/app_router.dart';
-import 'package:reading/features/home/domain/entities/book_entity.dart';
+import 'package:booksage/core/utils/app_router.dart';
+import 'package:booksage/features/home/domain/entities/book_entity.dart';
 import '../../../../../core/utils/styles.dart';
 import 'book_rating.dart';
 

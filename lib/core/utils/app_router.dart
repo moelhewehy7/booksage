@@ -1,19 +1,21 @@
+import 'package:booksage/features/auth/presentaion/views/forgot_password.dart';
+import 'package:booksage/features/auth/presentaion/views/edit_profile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:reading/core/utils/service_locator.dart';
-import 'package:reading/features/auth/presentaion/views/get_started_view.dart';
-import 'package:reading/features/auth/presentaion/views/sign_in_view.dart';
-import 'package:reading/features/auth/presentaion/views/sign_up_view.dart';
-import 'package:reading/features/home/data/repos/home_repo_impl.dart';
-import 'package:reading/features/home/domain/entities/book_entity.dart';
-import 'package:reading/features/home/domain/use_cases/fetch_similar_books_usecase.dart';
-import 'package:reading/features/home/domain/use_cases/fetch_by_search_usecase.dart';
-import 'package:reading/features/search/presentaion/manager/search%20cubit/search_cubit.dart';
-import 'package:reading/features/home/presentation/views/similar_books_view.dart';
-import 'package:reading/features/onboarding/presentation/views/onboardingview.dart';
-import 'package:reading/features/search/presentaion/views/search_view.dart';
-import 'package:reading/features/splash/presentation/views/splashview.dart';
+import 'package:booksage/core/utils/service_locator.dart';
+import 'package:booksage/features/auth/presentaion/views/get_started_view.dart';
+import 'package:booksage/features/auth/presentaion/views/sign_in_view.dart';
+import 'package:booksage/features/auth/presentaion/views/sign_up_view.dart';
+import 'package:booksage/features/home/data/repos/home_repo_impl.dart';
+import 'package:booksage/features/home/domain/entities/book_entity.dart';
+import 'package:booksage/features/home/domain/use_cases/fetch_similar_books_usecase.dart';
+import 'package:booksage/features/home/domain/use_cases/fetch_by_search_usecase.dart';
+import 'package:booksage/features/search/presentaion/manager/search%20cubit/search_cubit.dart';
+import 'package:booksage/features/home/presentation/views/similar_books_view.dart';
+import 'package:booksage/features/onboarding/presentation/views/onboardingview.dart';
+import 'package:booksage/features/search/presentaion/views/search_view.dart';
+import 'package:booksage/features/splash/presentation/views/splashview.dart';
 
 import '../../features/home/presentation/manager/similar books cubit/similiar_books_cubit.dart';
 import '../../features/home/presentation/views/book_details_view.dart';
@@ -25,9 +27,11 @@ abstract class AppRouter {
   static const kbookdetailesview = '/bookdetailesview';
   static const ksearchview = '/searchview';
   static const ksimilarview = '/similarview';
-  static const kGetStartedView = '/GetStartedView ';
-  static const kSignin = '/Signin';
-  static const kSignup = '/Signup';
+  static const kGetStartedView = '/getstartedview';
+  static const kSignin = '/signin';
+  static const kSignup = '/signup';
+  static const kForgotPassword = '/forgotpassword';
+  static const kEditProfile = '/editprofile';
   static final router = GoRouter(
     routes: [
       GoRoute(
@@ -80,6 +84,15 @@ abstract class AppRouter {
         path: kSignup,
         pageBuilder: (context, state) =>
             const CupertinoPage(child: SignUpView()),
+      ),
+      GoRoute(
+        path: kForgotPassword,
+        pageBuilder: (context, state) =>
+            const CupertinoPage(child: ForgotPasswordView()),
+      ),
+      GoRoute(
+        path: kEditProfile,
+        builder: (context, state) => const EditProfile(),
       )
     ],
   );

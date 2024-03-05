@@ -1,6 +1,6 @@
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:reading/constants.dart';
-import 'package:reading/features/home/domain/entities/book_entity.dart';
+import 'package:booksage/constants.dart';
+import 'package:booksage/features/home/domain/entities/book_entity.dart';
 
 abstract class HomeLocalDataSource {
   List<BookEntity> fetchFeaturedBooks({int pagenumber = 0});

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:reading/constants.dart';
-import 'package:reading/core/utils/styles.dart';
-import 'package:reading/features/home/presentation/manager/Fetch%20feautred%20books%20cubit/featured_books_cubit.dart';
+import 'package:booksage/constants.dart';
+import 'package:booksage/core/utils/styles.dart';
+import 'package:booksage/features/home/presentation/manager/Fetch%20feautred%20books%20cubit/featured_books_cubit.dart';
 import '../../manager/newest books cubit/newest_books_cubit.dart';
 import 'bestsellersliverlist.dart';
 import 'featured_books_listview.dart';

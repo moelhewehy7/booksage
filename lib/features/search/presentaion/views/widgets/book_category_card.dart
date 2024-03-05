@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:reading/constants.dart';
-import 'package:reading/core/utils/custombutton.dart';
+import 'package:booksage/constants.dart';
+import 'package:booksage/core/utils/widgets/custombutton.dart';
 
 class BookCategoryCard extends StatelessWidget {
   const BookCategoryCard(
@@ -35,7 +35,7 @@ class BookCategoryCard extends StatelessWidget {
               string: category,
               borderRadius: const BorderRadius.all(Radius.circular(20)),
               onPressed: onpressed,
-              color: Color.fromARGB(255, 255, 243, 239),
+              color: const Color.fromARGB(255, 255, 243, 239),
               textcolor: kprimarycolor,
               fontSize: 12,
               letterSpacing: 1,

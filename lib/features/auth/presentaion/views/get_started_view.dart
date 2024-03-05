@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:icons_plus/icons_plus.dart';
-import 'package:reading/animations/fade_in_slide.dart';
-import 'package:reading/constants.dart';
-import 'package:reading/core/utils/app_router.dart';
-import 'package:reading/core/utils/assets.dart';
-import 'package:reading/features/auth/presentaion/views/widgets/button.dart';
+import 'package:booksage/animations/fade_in_slide.dart';
+import 'package:booksage/constants.dart';
+import 'package:booksage/core/utils/app_router.dart';
+import 'package:booksage/core/utils/assets.dart';
+import 'package:booksage/core/utils/styles.dart';
+import 'package:booksage/features/auth/presentaion/views/widgets/button.dart';
 
 class GetStartedView extends StatefulWidget {
   const GetStartedView({super.key});
@@ -32,20 +33,20 @@ class _GetStartedViewState extends State<GetStartedView> {
                   height: height * 0.15, child: Image.asset(AssetsData.logo)),
             ),
             const Spacer(),
-            const FadeInSlide(
+            FadeInSlide(
               duration: .5,
               child: Text(
                 "Let's Get Started!",
-                style: TextStyle(color: kprimarycolor),
+                style: Styles.textStyle20.copyWith(color: kprimarycolor),
                 textAlign: TextAlign.center,
               ),
             ),
             SizedBox(height: height * 0.015),
-            const FadeInSlide(
+            FadeInSlide(
               duration: .6,
               child: Text(
-                "Let's dive in into your account",
-                style: TextStyle(color: kprimarycolor),
+                "Let's dive into some great books.",
+                style: Styles.textStyle18.copyWith(color: kprimarycolor),
                 textAlign: TextAlign.center,
               ),
             ),
@@ -84,12 +85,12 @@ class _GetStartedViewState extends State<GetStartedView> {
                   GoRouter.of(context).push(AppRouter.kSignup);
                 },
                 style: FilledButton.styleFrom(
-                  backgroundColor: const Color(0xFF7B574B),
+                  backgroundColor: const Color(0xFF5F433A),
                   fixedSize: const Size.fromHeight(50),
                 ),
                 child: const Text(
                   "Sign Up",
-                  style: TextStyle(fontWeight: FontWeight.w900),
+                  style: TextStyle(fontWeight: FontWeight.w500),
                 ),
               ),
             ),
@@ -101,14 +102,13 @@ class _GetStartedViewState extends State<GetStartedView> {
                   GoRouter.of(context).push(AppRouter.kSignin);
                 },
                 style: FilledButton.styleFrom(
-                  backgroundColor: const Color(0xFF7B574B),
+                  backgroundColor: const Color(0xFFFFDCD1),
                   fixedSize: const Size.fromHeight(50),
                 ),
                 child: const Text(
                   "Sign In",
                   style: TextStyle(
-                    fontWeight: FontWeight.w900,
-                  ),
+                      fontWeight: FontWeight.w500, color: kprimarycolor),
                 ),
               ),
             ),

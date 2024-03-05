@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:reading/constants.dart';
-import 'package:reading/core/utils/styles.dart';
-import 'package:reading/features/home/domain/entities/book_entity.dart';
-import 'package:readmore/readmore.dart';
+import 'package:booksage/features/home/domain/entities/book_entity.dart';
 
 import 'widgets/books_detailed_column.dart';
 import 'widgets/read_more.dart';
@@ -26,7 +22,7 @@ class SimilarBooksView extends StatelessWidget {
         automaticallyImplyLeading: false,
         elevation: 0,
         title: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 6),
+          padding: const EdgeInsets.symmetric(horizontal: 6),
           child: InkWell(
             onTap: () {
               Navigator.of(context).pop();

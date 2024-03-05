@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
-import 'package:reading/core/utils/app_router.dart';
-import 'package:reading/core/utils/assets.dart';
+import 'package:booksage/core/utils/app_router.dart';
+import 'package:booksage/core/utils/assets.dart';
 
 class CustomSliverAppBar extends StatelessWidget {
   const CustomSliverAppBar({
@@ -15,7 +15,7 @@ class CustomSliverAppBar extends StatelessWidget {
       flexibleSpace: FlexibleSpaceBar(
         // prevent the SliverAppBar from changing its background color to a darker shade
         background: Container(
-          color: Color(0xFFfffbfe),
+          color: const Color(0xFFfffbfe),
         ),
       ),
       automaticallyImplyLeading: false,

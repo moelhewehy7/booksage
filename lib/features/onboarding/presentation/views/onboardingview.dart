@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:reading/features/auth/presentaion/views/get_started_view.dart';
-import 'package:reading/features/home/presentation/views/home_view.dart';
+import 'package:booksage/features/auth/presentaion/views/get_started_view.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'widgets/onboardingview_body.dart';

@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:reading/core/utils/styles.dart';
-import 'package:reading/features/search/presentaion/views/widgets/book_category_listview.dart';
-import 'package:reading/features/search/presentaion/views/widgets/custometextfield.dart';
+import 'package:booksage/core/utils/styles.dart';
+import 'package:booksage/features/search/presentaion/views/widgets/book_category_listview.dart';
+import 'package:booksage/features/search/presentaion/views/widgets/custometextfield.dart';
 
 import 'searchresultlistview.dart';
 
