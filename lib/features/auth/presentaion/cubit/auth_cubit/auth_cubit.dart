@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:equatable/equatable.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -39,15 +38,11 @@ class AuthCubit extends Cubit<AuthState> {
   Future<void> signUp({required String email, required String password}) async {
     emit(SignupLoading());
     try {
-      UserCredential usercredential =
-          await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
-      FirebaseFirestore.instance
-          .collection("Users")
-          .doc(usercredential.user!.email)
-          .set({"username": usercredential.user!.email!.split("@")[0]});
+
       emit(SignupSuccess());
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
@@ -61,22 +56,6 @@ class AuthCubit extends Cubit<AuthState> {
       }
     } catch (e) {
       debugPrint(e.toString());
-    }
-  }
-
-  Future<void> fetchUserData() async {
-    try {
-      final currentUser = FirebaseAuth.instance.currentUser!;
-      DocumentSnapshot<Map<String, dynamic>> snapshot = await FirebaseFirestore
-          .instance
-          .collection("Users")
-          .doc(currentUser.email)
-          .get();
-      Map<String, dynamic>? userData = snapshot.data();
-      emit(UserDataLoaded(userData: userData));
-    } catch (e) {
-      // Handle the error
-      emit(UserDatafailure(error: e.toString()));
     }
   }
 

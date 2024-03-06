@@ -1,14 +1,16 @@
 import 'package:booksage/core/utils/styles.dart';
+import 'package:booksage/features/auth/presentaion/cubit/user_data_cubit/cubit/user_data_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:go_router/go_router.dart';
+import 'package:iconly/iconly.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:booksage/animations/fade_in_slide.dart';
 import 'package:booksage/constants.dart';
 import 'package:booksage/core/utils/app_router.dart';
 import 'package:booksage/core/utils/widgets/show_alert.dart';
-import 'package:booksage/features/auth/presentaion/cubit/auth_cubit.dart';
+import 'package:booksage/features/auth/presentaion/cubit/auth_cubit/auth_cubit.dart';
 import 'package:booksage/features/auth/presentaion/views/widgets/button.dart';
 import 'package:booksage/features/auth/presentaion/views/widgets/textfields.dart';
 
@@ -21,7 +23,7 @@ class SignUpView extends StatefulWidget {
 
 class _SignUpViewState extends State<SignUpView> {
   bool termsAccepted = false;
-  String? email, password;
+  String? email, password, first, last;
   GlobalKey<FormState> formkey = GlobalKey();
   @override
   Widget build(BuildContext context) {
@@ -52,7 +54,8 @@ class _SignUpViewState extends State<SignUpView> {
                 duration: .3,
                 child: Text(
                   "Create an Account",
-                  style: Styles.textStyle25.copyWith(color: kprimarycolor),
+                  style: Styles.textStyle25
+                      .copyWith(color: kprimarycolor, fontSize: 23),
                 ),
               ),
               const SizedBox(height: 15),
@@ -60,17 +63,70 @@ class _SignUpViewState extends State<SignUpView> {
                 duration: .4,
                 child: Text(
                   "Start exploring a world of books!",
-                  style: Styles.textStyle20.copyWith(color: kprimarycolor),
+                  style: Styles.textStyle20
+                      .copyWith(color: kprimarycolor, fontSize: 18),
                 ),
               ),
-              const SizedBox(height: 25),
+              SizedBox(height: height * 0.02),
+              const FadeInSlide(
+                duration: .7,
+                child: Text(
+                  "First name",
+                ),
+              ),
+              SizedBox(height: height * 0.01),
+              FadeInSlide(
+                duration: .7,
+                child: EditTextForm(
+                  validator: (data) {
+                    if (data == null || data.isEmpty) {
+                      return 'Please enter your first name ';
+                    } else if (data.length > 8) {
+                      return 'First name must be at most 8 characters';
+                    }
+                    return null;
+                  },
+                  onSaved: (data) {
+                    first = data;
+                  },
+                  icon: IconlyLight.profile,
+                  hintText: "First name",
+                ),
+              ),
+              SizedBox(height: height * 0.02),
+              const FadeInSlide(
+                duration: .8,
+                child: Text(
+                  "Last name",
+                ),
+              ),
+              SizedBox(height: height * 0.01),
+              FadeInSlide(
+                duration: .8,
+                child: EditTextForm(
+                  validator: (data) {
+                    if (data == null || data.isEmpty) {
+                      return 'Please enter your last name';
+                    } else if (data.length > 8) {
+                      return 'Last name must be at most 8 characters';
+                    }
+                    return null;
+                  },
+                  onSaved: (data) {
+                    last = data;
+                  },
+                  icon: IconlyLight.profile,
+                  hintText: "Last name",
+                ),
+              ),
+              SizedBox(height: height * 0.02),
               const FadeInSlide(
                 duration: .5,
                 child: Text(
                   "Email",
                 ),
               ),
-              const SizedBox(height: 10),
+              SizedBox(height: height * 0.01),
               FadeInSlide(
                 duration: .5,
                 child: EmailField(
@@ -88,14 +144,14 @@ class _SignUpViewState extends State<SignUpView> {
                   },
                 ),
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: height * 0.02),
               const FadeInSlide(
                 duration: .6,
                 child: Text(
                   "Password",
                 ),
               ),
-              const SizedBox(height: 10),
+              SizedBox(height: height * 0.01),
               FadeInSlide(
                 duration: .6,
                 child: PasswordField(
@@ -110,15 +166,14 @@ class _SignUpViewState extends State<SignUpView> {
                   },
                 ),
               ),
-              const SizedBox(height: 20),
-              SizedBox(height: height * 0.04),
+              SizedBox(height: height * 0.02),
               const FadeInSlide(
                 duration: .9,
                 child: Row(
                   children: [
                     Expanded(
                         child: Divider(
-                      thickness: .3,
+                      thickness: .1,
                     )),
                     Text(
                       "   or   ",
@@ -130,7 +185,7 @@ class _SignUpViewState extends State<SignUpView> {
                   ],
                 ),
               ),
-              SizedBox(height: height * 0.07),
+              SizedBox(height: height * 0.02),
               FadeInSlide(
                 duration: 1.0,
                 child: LoginButton(
@@ -184,8 +239,11 @@ class _SignUpViewState extends State<SignUpView> {
                   child: FilledButton(
                     onPressed: () async {
                       if (formkey.currentState!.validate()) {
+                        formkey.currentState!.save();
                         BlocProvider.of<AuthCubit>(context)
                             .signUp(email: email!, password: password!);
+                        BlocProvider.of<UserDataCubit>(context).sendUserData(
+                            email: email!, firstname: first!, lastname: last!);
                       }
                     },
                     style: FilledButton.styleFrom(

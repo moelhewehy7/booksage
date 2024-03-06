@@ -7,7 +7,7 @@
 </queries>
     <uses-permission android:name="android.permission.INTERNET" />
     <application
-        android:label="reading"
+        android:label="booksage"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity

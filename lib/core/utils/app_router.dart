@@ -39,9 +39,8 @@ abstract class AppRouter {
         builder: (context, state) => const SplashView(),
       ),
       GoRoute(
-        path: kOnBoardingView,
-        builder: (context, state) => const OnBoardingView(),
-      ),
+          path: kOnBoardingView,
+          builder: (context, state) => const OnBoardingView()),
       GoRoute(
         path: kHomeView,
         builder: (context, state) => const HomeView(),

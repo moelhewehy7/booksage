@@ -8,7 +8,7 @@ import 'package:booksage/animations/fade_in_slide.dart';
 import 'package:booksage/constants.dart';
 import 'package:booksage/core/utils/app_router.dart';
 import 'package:booksage/core/utils/widgets/show_alert.dart';
-import 'package:booksage/features/auth/presentaion/cubit/auth_cubit.dart';
+import 'package:booksage/features/auth/presentaion/cubit/auth_cubit/auth_cubit.dart';
 import 'package:booksage/features/auth/presentaion/views/widgets/button.dart';
 import 'package:booksage/features/auth/presentaion/views/widgets/textfields.dart';
 
@@ -55,7 +55,8 @@ class _SignInViewState extends State<SignInView> {
                 duration: .4,
                 child: Text(
                   "Welcome Back! 👋",
-                  style: Styles.textStyle25.copyWith(color: kprimarycolor),
+                  style: Styles.textStyle25
+                      .copyWith(color: kprimarycolor, fontSize: 23),
                   // style: context.hm!.copyWith(fontWeight: FontWeight.bold),
                 ),
               ),
@@ -64,7 +65,8 @@ class _SignInViewState extends State<SignInView> {
                 duration: .5,
                 child: Text(
                   "Your next adventure awaits",
-                  style: Styles.textStyle20.copyWith(color: kprimarycolor),
+                  style: Styles.textStyle20
+                      .copyWith(color: kprimarycolor, fontSize: 18),
                   // style: context.tm,
                 ),
               ),
