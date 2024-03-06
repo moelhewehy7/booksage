@@ -41,8 +41,8 @@ The app features a splash screen with a minimalist design, providing a seamless 
 
 ## Screenshots, the app is currently being updated*
 <img src="https://github.com/moelhewehy7/reading/assets/130074772/d6a605ef-e86b-40a5-893f-f71a54337d98" width="150" height="300">
-<img src="https://github.com/moelhewehy7/reading/assets/130074772/e6134ae8-4018-4584-b05f-41c98c57934e" width="150" height="300">
 <img src="https://github.com/moelhewehy7/reading/assets/130074772/fd312cbb-38ac-4168-9eb0-f8ca4785aacb" width="150" height="300">
+<img src="https://github.com/moelhewehy7/reading/assets/130074772/e6134ae8-4018-4584-b05f-41c98c57934e" width="150" height="300">
 <img src="https://github.com/moelhewehy7/reading/assets/130074772/4a591bff-fb9e-4291-bed8-baf7b3e4f9de" width="150" height="300">
 <img src="https://github.com/moelhewehy7/reading/assets/130074772/5e36c88b-ce69-472d-b947-ade738a18637" width="150" height="300">
 <img src="https://github.com/moelhewehy7/reading/assets/130074772/0988211e-c156-4a2a-8f3f-64e926b43c50" width="150" height="300">
