@@ -30,6 +30,7 @@ class _PasswordFieldState extends State<PasswordField> {
           },
           obscureText: isPasswordInVisible,
           decoration: InputDecoration(
+            contentPadding: const EdgeInsets.all(0.5),
             filled: true,
             fillColor: const Color(0xFF8B8060).withOpacity(.1),
             hintText: "Password",
@@ -77,6 +78,7 @@ class EmailField extends StatelessWidget {
       // cursorColor: isDark ? Colors.grey : Colors.black54,
       keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
+        contentPadding: const EdgeInsets.all(0.5),
         filled: true,
         fillColor: const Color(0xFF8B8060).withOpacity(.1),
         hintText: "Email",
@@ -104,6 +106,7 @@ class TextForm extends StatelessWidget {
       cursorColor: Colors.black54,
       keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
+        contentPadding: const EdgeInsets.all(0.5),
         filled: true,
         fillColor: const Color(0xFF8B8060).withOpacity(.1),
         hintText: "Email",
@@ -141,6 +144,7 @@ class EditTextForm extends StatelessWidget {
       cursorColor: Colors.black54,
       keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
+        contentPadding: const EdgeInsets.all(0.5),
         filled: true,
         fillColor: const Color(0xFF8B8060).withOpacity(.1),
         hintText: hintText,
