@@ -69,14 +69,14 @@ class _SignUpViewState extends State<SignUpView> {
               ),
               SizedBox(height: height * 0.02),
               const FadeInSlide(
-                duration: .7,
+                duration: .5,
                 child: Text(
                   "First name",
                 ),
               ),
               SizedBox(height: height * 0.01),
               FadeInSlide(
-                duration: .7,
+                duration: .5,
                 child: EditTextForm(
                   validator: (data) {
                     if (data == null || data.isEmpty) {
@@ -95,14 +95,14 @@ class _SignUpViewState extends State<SignUpView> {
               ),
               SizedBox(height: height * 0.02),
               const FadeInSlide(
-                duration: .8,
+                duration: .6,
                 child: Text(
                   "Last name",
                 ),
               ),
               SizedBox(height: height * 0.01),
               FadeInSlide(
-                duration: .8,
+                duration: .6,
                 child: EditTextForm(
                   validator: (data) {
                     if (data == null || data.isEmpty) {
@@ -121,14 +121,14 @@ class _SignUpViewState extends State<SignUpView> {
               ),
               SizedBox(height: height * 0.02),
               const FadeInSlide(
-                duration: .5,
+                duration: .7,
                 child: Text(
                   "Email",
                 ),
               ),
               SizedBox(height: height * 0.01),
               FadeInSlide(
-                duration: .5,
+                duration: .7,
                 child: EmailField(
                   validator: (data) {
                     if (data == null || data.isEmpty) {
@@ -146,14 +146,14 @@ class _SignUpViewState extends State<SignUpView> {
               ),
               SizedBox(height: height * 0.02),
               const FadeInSlide(
-                duration: .6,
+                duration: .8,
                 child: Text(
                   "Password",
                 ),
               ),
               SizedBox(height: height * 0.01),
               FadeInSlide(
-                duration: .6,
+                duration: .8,
                 child: PasswordField(
                   validator: (data) {
                     if (data == null || data.isEmpty) {

@@ -70,7 +70,7 @@ class HomeView extends StatelessWidget {
             icon: IconlyLight.logout,
             label: "Logout",
             onTap: () async {
-              signoutAlertdialog(context);
+              signoutdialog(context);
             },
           )
         ],
@@ -114,7 +114,7 @@ class HomeView extends StatelessWidget {
             icon: IconlyLight.home,
             label: "Home",
             onTap: () {
-              Navigator.of(context).pop();
+              GoRouter.of(context).pop();
             },
           ),
           SidebarXItem(

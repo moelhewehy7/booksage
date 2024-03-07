@@ -1,6 +1,4 @@
 import 'dart:io';
-
-import 'package:booksage/constants.dart';
 import 'package:booksage/core/utils/app_router.dart';
 import 'package:booksage/features/auth/presentaion/cubit/user_data_cubit/cubit/user_data_cubit.dart';
 import 'package:booksage/features/auth/presentaion/views/widgets/textfields.dart';
@@ -21,9 +19,9 @@ class EditProfile extends StatefulWidget {
 
 class _EditProfileState extends State<EditProfile> {
   String? first, last, bio;
-  late String _imageUrl = '';
+  late final String _imageUrl = '';
   final _picker = ImagePicker();
-  ValueNotifier<String> _imageUrlNotifier = ValueNotifier<String>('');
+  final ValueNotifier<String> _imageUrlNotifier = ValueNotifier<String>('');
 
   GlobalKey<FormState> formkey = GlobalKey();
 
@@ -37,7 +35,7 @@ class _EditProfileState extends State<EditProfile> {
         ),
         body: BlocBuilder<UserDataCubit, UserDataState>(
             builder: (context, state) {
-          if (state is fetchUserDataloaded) {
+          if (state is FetchUserDataloaded) {
             Map<String, dynamic>? userData = state.userData;
             return Form(
                 key: formkey,
@@ -54,7 +52,7 @@ class _EditProfileState extends State<EditProfile> {
                       Positioned(
                         top: size.height * .15 - 60,
                         child: CircleAvatar(
-                          backgroundColor: Color(0xFFFFE8CB),
+                          backgroundColor: const Color(0xFFFFE8CB),
                           radius: 60,
                           backgroundImage: _imageUrl.isEmpty
                               ? const AssetImage(
@@ -176,8 +174,8 @@ class _EditProfileState extends State<EditProfile> {
                       ))
                 ]));
           } else {
-            return Center(
-              child: const Column(
+            return const Center(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(height: 20, child: CircularProgressIndicator())

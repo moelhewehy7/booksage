@@ -4,7 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-void signoutAlertdialog(context) {
+void signoutdialog(context) {
   showDialog(
       context: context,
       builder: (context) {
@@ -16,7 +16,7 @@ void signoutAlertdialog(context) {
           actions: [
             ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).pop();
+                  GoRouter.of(context).pop();
                 },
                 style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(

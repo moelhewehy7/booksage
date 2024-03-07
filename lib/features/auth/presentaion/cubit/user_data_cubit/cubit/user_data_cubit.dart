@@ -1,7 +1,7 @@
-import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:equatable/equatable.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'user_data_state.dart';
 
@@ -27,7 +27,7 @@ class UserDataCubit extends Cubit<UserDataState> {
         .doc(currentUser.email)
         .get();
     Map<String, dynamic>? userData = snapshot.data();
-    emit(fetchUserDataloaded(userData: userData));
+    emit(FetchUserDataloaded(userData: userData));
   }
 
   Future<void> updateUserData(

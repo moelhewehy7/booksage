@@ -23,8 +23,8 @@ class UserDatafailure extends UserDataState {
 
 class UserDataLoading extends UserDataState {}
 
-class fetchUserDataloaded extends UserDataState {
+class FetchUserDataloaded extends UserDataState {
   final Map<String, dynamic>? userData;
 
-  const fetchUserDataloaded({required this.userData});
+  const FetchUserDataloaded({required this.userData});
 }
