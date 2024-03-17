@@ -1,3 +1,4 @@
+import 'package:booksage/features/auth/presentaion/cubit/user_data_cubit/cubit/user_data_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:booksage/constants.dart';
@@ -20,6 +21,7 @@ class HomeViewBody extends StatelessWidget {
       onRefresh: () async {
         await Future.delayed(const Duration(seconds: 3));
         if (!currentContext.mounted) return;
+
         fetchdata(currentContext);
         // currentContext is used to check if the widget is still mounted
         // before calling the fetchdata method. This is done to avoid calling fetchdata on a
@@ -58,6 +60,7 @@ class HomeViewBody extends StatelessWidget {
   }
 
   void fetchdata(BuildContext context) {
+    BlocProvider.of<UserDataCubit>(context).getUserData();
     BlocProvider.of<FeaturedBooksCubit>(context).fetchfeaturedBooks();
     BlocProvider.of<NewestBooksCubit>(context).fetchnewestBooks();
   }
