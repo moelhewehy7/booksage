@@ -1,5 +1,6 @@
 import 'package:booksage/features/auth/presentaion/views/forgot_password.dart';
 import 'package:booksage/features/auth/presentaion/views/edit_profile.dart';
+import 'package:booksage/features/splash/presentation/views/splashview.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -15,8 +16,6 @@ import 'package:booksage/features/search/presentaion/manager/search%20cubit/sear
 import 'package:booksage/features/home/presentation/views/similar_books_view.dart';
 import 'package:booksage/features/onboarding/presentation/views/onboardingview.dart';
 import 'package:booksage/features/search/presentaion/views/search_view.dart';
-import 'package:booksage/features/splash/presentation/views/splashview.dart';
-
 import '../../features/home/presentation/manager/similar books cubit/similiar_books_cubit.dart';
 import '../../features/home/presentation/views/book_details_view.dart';
 import '../../features/home/presentation/views/home_view.dart';
