@@ -10,6 +10,7 @@ class AuthCubit extends Cubit<AuthState> {
 
   Future<void> signin({required String email, required String password}) async {
     emit(LoginLoading());
+    await Future.delayed(const Duration(seconds: 2));
     try {
       await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
@@ -37,6 +38,7 @@ class AuthCubit extends Cubit<AuthState> {
 
   Future<void> signUp({required String email, required String password}) async {
     emit(SignupLoading());
+    await Future.delayed(const Duration(seconds: 2));
     try {
       await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: email,

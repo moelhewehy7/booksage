@@ -9,22 +9,15 @@ sealed class UserDataState extends Equatable {
 
 final class UserDataInitial extends UserDataState {}
 
-class UserDataLoaded extends UserDataState {
-  // final Map<String, dynamic>? userData;
-
-  // const UserDataLoaded({required this.userData});
-}
-
-class UserDatafailure extends UserDataState {
-  final String error;
-
-  const UserDatafailure({required this.error});
-}
-
 class UserDataLoading extends UserDataState {}
 
-class FetchUserDataloaded extends UserDataState {
+class UserDataSuccess extends UserDataState {
   final Map<String, dynamic>? userData;
-
-  const FetchUserDataloaded({required this.userData});
+  const UserDataSuccess({required this.userData});
 }
+
+class UserDataFailure extends UserDataState {}
+
+class UpdateUserDataLoading extends UserDataState {}
+
+class UpdateUserDataSuccess extends UserDataState {}
