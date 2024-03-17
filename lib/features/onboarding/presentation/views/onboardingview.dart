@@ -1,3 +1,5 @@
+import 'package:booksage/features/home/presentation/views/home_view.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:booksage/features/auth/presentaion/views/get_started_view.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -32,7 +34,16 @@ class _OnBoardingViewState extends State<OnBoardingView> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: onboardingShown
-            ? const GetStartedView()
+            ? StreamBuilder(
+                stream: FirebaseAuth.instance.userChanges(),
+                builder: (BuildContext context, AsyncSnapshot snapshot) {
+                  if (snapshot.hasData) {
+                    return const HomeView();
+                  } else {
+                    return const GetStartedView();
+                  }
+                },
+              )
             : const OnBoardingViewBody());
   }
 }

@@ -207,8 +207,8 @@ class _SignUpViewState extends State<SignUpView> {
               FadeInSlide(
                 duration: 1.3,
                 child: LoginButton(
-                  icon: Brand(Brands.twitter, size: 25),
-                  text: "Continue with Twitter",
+                  icon: Brand(Brands.twitterx, size: 25),
+                  text: "Continue with X",
                   onPressed: () {},
                 ),
               ),
