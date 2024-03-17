@@ -52,7 +52,7 @@ class BookSage extends StatelessWidget {
           create: (context) => AuthCubit(),
         ),
         BlocProvider(
-          create: (context) => UserDataCubit(),
+          create: (context) => UserDataCubit()..getUserData(),
         )
         //  the cascade operator (..) in Dart. It's used to perform a sequence of operations on the same object.
         //  It's typically used to make a series of calls on the same object without repeating the object reference.
