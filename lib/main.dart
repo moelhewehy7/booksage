@@ -6,7 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'constants.dart';
 import 'core/utils/app_router.dart';
-import 'core/utils/service_locator.dart';
+import 'package:booksage/core/utils/service_locator.dart';
 import 'package:booksage/core/utils/simple_boc_obserer.dart';
 import 'package:booksage/features/auth/presentaion/cubit/auth_cubit/auth_cubit.dart';
 import 'package:booksage/features/home/data/repos/home_repo_impl.dart';
