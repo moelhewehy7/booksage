@@ -38,6 +38,7 @@ class UserDataCubit extends Cubit<UserDataState> {
       "bio": bio,
       "photoUrl": url
     });
+    await getUserData();
   }
 
   Future<void> getUserData() async {
@@ -63,17 +64,3 @@ class UserDataCubit extends Cubit<UserDataState> {
     _userDataSubscription?.cancel();
   }
 }
-  // Future<void> fetchUserData() async {
-  //   emit(UserDataLoading());
-
-  //   final currentUser = FirebaseAuth.instance.currentUser!;
-  //   // Cancel previous subscription if exists
-  //   FirebaseFirestore.instance
-  //       .collection("Users")
-  //       .doc(currentUser.email)
-  //       .snapshots()
-  //       .listen((event) {
-  //     Map<String, dynamic>? userData = event.data();
-  //     emit(FetchUserDataloaded(userData: userData));
-  //   });
-  // }
