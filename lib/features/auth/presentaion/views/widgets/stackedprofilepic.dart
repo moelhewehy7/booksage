@@ -31,22 +31,26 @@ class StackedProfilePic extends StatelessWidget {
           top: size.height * .15 - 60,
           child: ValueListenableBuilder<String>(
             valueListenable: _imageUrlNotifier,
+            // This callback function is called whenever the value of _imageUrlNotifier changes.
             builder: (context, imageUrl, child) {
+              // the imageUrl variable is assigned the current value of _imageUrlNotifier.value
               return CircleAvatar(
                 backgroundColor: const Color(0xFFf1f2f3),
                 radius: 60,
-                // This code checks if imageUrl is not empty and does not start with 'http'
-                // (which means it's a local file path) before using Image.file to display the local image.
-                //  Otherwise, it uses Image.network to display the image from the URL.
                 child: ClipOval(
+                  // This is used to display an image from a local file.
+                  //  It checks if imageUrl is not empty and does not start with 'http',
+                  //   which indicates that it's a local file path.
+                  //  If so, it displays the image using Image.file.
                   child: imageUrl.isNotEmpty && !imageUrl.startsWith('http')
                       ? Image.file(
                           File(imageUrl),
                           width: 120,
                           height: 120,
                           fit: BoxFit.cover,
-                        )
+                        ) //else If imageUrl is empty or starts with 'http',
                       : ExtendedImage.network(
+                          // if is empty, it means that no image has been selected
                           _imageUrlNotifier.value.isEmpty
                               ? userData!["photoUrl"]
                               : _imageUrlNotifier.value,
