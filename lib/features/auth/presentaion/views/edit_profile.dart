@@ -148,12 +148,11 @@ class _EditProfileState extends State<EditProfile> {
                                         GoRouter.of(context).pushReplacement(
                                             AppRouter.kHomeView);
                                       }
-                                      await BlocProvider.of<UserDataCubit>(
-                                              context)
-                                          .getUserData();
                                     });
 
-                                    if (!context.mounted) return;
+                                    setState(() {
+                                      _isLoading = false;
+                                    });
                                     ScaffoldMessenger.of(context).showSnackBar(
                                       const SnackBar(
                                         backgroundColor: Color(0xFF5F433A),
@@ -162,10 +161,6 @@ class _EditProfileState extends State<EditProfile> {
                                         duration: Duration(seconds: 3),
                                       ),
                                     );
-
-                                    setState(() {
-                                      _isLoading = false;
-                                    });
                                   }
                                 },
                                 style: FilledButton.styleFrom(
