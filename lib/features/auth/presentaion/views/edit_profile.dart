@@ -269,20 +269,23 @@ class _EditProfileState extends State<EditProfile> {
         await ImagePicker().pickImage(source: ImageSource.gallery);
     if (pickedFile != null) {
       _imageUrlNotifier.value = pickedFile.path;
-    }
+    } //sets the value to the file path of the picked image
   }
 
   Future<void> _uploadImage() async {
     if (_imageUrlNotifier.value.isNotEmpty) {
       final user = FirebaseAuth.instance.currentUser;
       final fileName = user!.uid + DateTime.now().toString();
+      //Generate a unique file name
+      // Reference to the Firebase where the image will be stored,
       final Reference ref =
           FirebaseStorage.instance.ref().child('profile_images/$fileName');
-
+      //upload the image file to Firebase,
+      //File object representing the image file
       final uploadTask = ref.putFile(File(_imageUrlNotifier.value));
-
+//Wait for the upload task to complete using
       await uploadTask.whenComplete(() => null);
-
+//Get the download URL
       final downloadUrl = await ref.getDownloadURL();
 
       _imageUrlNotifier.value = downloadUrl;
