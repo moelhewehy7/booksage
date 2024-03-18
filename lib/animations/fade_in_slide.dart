@@ -31,7 +31,7 @@ class _FadeInSlideState extends State<FadeInSlide>
   late Animation<double> inAnimation;
 // controller: Manages the duration and playback of animations.
 // opacityAnimation: Animates the opacity (transparency) of a widget.
-// inAnimation: Animates the position or size of a widget.
+// inAnimation: Animates the position widget.
   @override
   void initState() {
     super.initState();
