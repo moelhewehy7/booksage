@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:booksage/features/home/domain/entities/book_entity.dart';
+import '../../domain/entities/book_entity.dart';
 
 import '../manager/similar books cubit/similiar_books_cubit.dart';
 import 'widgets/book_detailes_view_body.dart';

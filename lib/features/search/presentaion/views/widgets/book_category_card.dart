@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:booksage/constants.dart';
-import 'package:booksage/core/utils/widgets/custombutton.dart';
+import '../../../../../constants.dart';
+import '../../../../../core/utils/widgets/custombutton.dart';
 
 class BookCategoryCard extends StatelessWidget {
   const BookCategoryCard(

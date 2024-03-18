@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:booksage/constants.dart';
+import '../../../../../constants.dart';
 import '../../manager/search cubit/search_cubit.dart';
 
 class CustomTextField extends StatelessWidget {

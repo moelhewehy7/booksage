@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:booksage/core/utils/widgets/custom_error.dart';
-import 'package:booksage/features/home/presentation/manager/newest%20books%20cubit/newest_books_cubit.dart';
+import '../../../../../core/utils/widgets/custom_error.dart';
+import '../../manager/newest%20books%20cubit/newest_books_cubit.dart';
 import 'bestsellerlistviewitem.dart';
 import 'shimmer_best_seller_sliverlistitem.dart';
 

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:booksage/core/utils/app_router.dart';
-import 'package:booksage/core/utils/assets.dart';
+import '../../../../../core/utils/app_router.dart';
+import '../../../../../core/utils/assets.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../../../constants.dart';

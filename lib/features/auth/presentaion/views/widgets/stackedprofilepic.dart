@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:booksage/constants.dart';
+import '../../../../../constants.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 

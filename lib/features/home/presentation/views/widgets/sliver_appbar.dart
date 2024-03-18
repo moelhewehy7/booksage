@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
-import 'package:booksage/core/utils/app_router.dart';
-import 'package:booksage/core/utils/assets.dart';
+import '../../../../../core/utils/app_router.dart';
+import '../../../../../core/utils/assets.dart';
 
 class CustomSliverAppBar extends StatelessWidget {
   const CustomSliverAppBar({

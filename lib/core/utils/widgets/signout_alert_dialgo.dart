@@ -1,5 +1,5 @@
-import 'package:booksage/constants.dart';
-import 'package:booksage/core/utils/app_router.dart';
+import '../../../constants.dart';
+import '../app_router.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';

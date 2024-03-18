@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:booksage/features/home/domain/entities/book_entity.dart';
+import '../entities/book_entity.dart';
 
 import '../../../../core/errors/failures.dart';
 

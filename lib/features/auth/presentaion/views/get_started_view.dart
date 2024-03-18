@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:icons_plus/icons_plus.dart';
-import 'package:booksage/animations/fade_in_slide.dart';
-import 'package:booksage/constants.dart';
-import 'package:booksage/core/utils/app_router.dart';
-import 'package:booksage/core/utils/assets.dart';
-import 'package:booksage/core/utils/styles.dart';
-import 'package:booksage/features/auth/presentaion/views/widgets/button.dart';
+import '../../../../animations/fade_in_slide.dart';
+import '../../../../constants.dart';
+import '../../../../core/utils/app_router.dart';
+import '../../../../core/utils/assets.dart';
+import '../../../../core/utils/styles.dart';
+import 'widgets/button.dart';
 
 class GetStartedView extends StatefulWidget {
   const GetStartedView({super.key});

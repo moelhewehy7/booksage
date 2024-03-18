@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:booksage/features/search/presentaion/manager/search%20cubit/search_cubit.dart';
-import 'package:booksage/features/search/presentaion/views/widgets/searchviewbody.dart';
+import '../manager/search%20cubit/search_cubit.dart';
+import 'widgets/searchviewbody.dart';
 
 class SearchView extends StatefulWidget {
   const SearchView({super.key});

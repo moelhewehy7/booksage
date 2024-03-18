@@ -1,10 +1,9 @@
 import 'dart:io';
-import 'package:booksage/constants.dart';
-import 'package:booksage/core/utils/app_router.dart';
-import 'package:booksage/features/auth/presentaion/cubit/user_data_cubit/cubit/user_data_cubit.dart';
-import 'package:booksage/features/auth/presentaion/views/widgets/stackedprofilepic.dart';
-import 'package:booksage/features/auth/presentaion/views/widgets/textfields.dart';
-import 'package:extended_image/extended_image.dart';
+import '../../../../constants.dart';
+import '../../../../core/utils/app_router.dart';
+import '../cubit/user_data_cubit/cubit/user_data_cubit.dart';
+import 'widgets/stackedprofilepic.dart';
+import 'widgets/textfields.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';

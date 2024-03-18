@@ -1,7 +1,7 @@
-import 'package:booksage/features/home/presentation/views/home_view.dart';
+import '../../../home/presentation/views/home_view.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:booksage/features/auth/presentaion/views/get_started_view.dart';
+import '../../../auth/presentaion/views/get_started_view.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'widgets/onboardingview_body.dart';

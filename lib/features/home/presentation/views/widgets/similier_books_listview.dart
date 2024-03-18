@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:booksage/core/utils/app_router.dart';
-import 'package:booksage/features/home/presentation/manager/similar%20books%20cubit/similiar_books_cubit.dart';
+import '../../../../../core/utils/app_router.dart';
+import '../../manager/similar%20books%20cubit/similiar_books_cubit.dart';
 import '../../../../../core/utils/widgets/custom_error.dart';
 import 'featured_book_listview_item.dart';
 import 'shimmer_similier_listview.dart';

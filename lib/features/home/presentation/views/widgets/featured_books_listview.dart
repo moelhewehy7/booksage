@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:booksage/core/utils/widgets/custom_error.dart';
-import 'package:booksage/features/home/domain/entities/book_entity.dart';
-import 'package:booksage/features/home/presentation/views/widgets/shimmer_book_listviewitem.dart';
+import '../../../../../core/utils/widgets/custom_error.dart';
+import '../../../domain/entities/book_entity.dart';
+import 'shimmer_book_listviewitem.dart';
 import '../../manager/Fetch feautred books cubit/featured_books_cubit.dart';
 import 'fetch_featured_books_listview.dart';
 

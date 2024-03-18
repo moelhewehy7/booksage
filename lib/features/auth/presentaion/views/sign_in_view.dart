@@ -1,16 +1,16 @@
-import 'package:booksage/core/utils/styles.dart';
+import '../../../../core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:go_router/go_router.dart';
 import 'package:icons_plus/icons_plus.dart';
-import 'package:booksage/animations/fade_in_slide.dart';
-import 'package:booksage/constants.dart';
-import 'package:booksage/core/utils/app_router.dart';
-import 'package:booksage/core/utils/widgets/show_alert.dart';
-import 'package:booksage/features/auth/presentaion/cubit/auth_cubit/auth_cubit.dart';
-import 'package:booksage/features/auth/presentaion/views/widgets/button.dart';
-import 'package:booksage/features/auth/presentaion/views/widgets/textfields.dart';
+import '../../../../animations/fade_in_slide.dart';
+import '../../../../constants.dart';
+import '../../../../core/utils/app_router.dart';
+import '../../../../core/utils/widgets/show_alert.dart';
+import '../cubit/auth_cubit/auth_cubit.dart';
+import 'widgets/button.dart';
+import 'widgets/textfields.dart';
 
 class SignInView extends StatefulWidget {
   const SignInView({super.key});

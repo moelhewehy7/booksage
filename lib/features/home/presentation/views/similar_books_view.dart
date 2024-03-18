@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:booksage/features/home/domain/entities/book_entity.dart';
+import '../../domain/entities/book_entity.dart';
 
 import 'widgets/books_detailed_column.dart';
 import 'widgets/read_more.dart';
