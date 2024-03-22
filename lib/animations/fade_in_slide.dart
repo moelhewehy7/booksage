@@ -55,7 +55,9 @@ class _FadeInSlideState extends State<FadeInSlide>
             setState(() {});
           });
   }
-
+// In this setup, you're correct that you're not explicitly calling animationController.forward() to start the animations.
+//   However, the addListener method you're using on both animations will cause the widget to rebuild whenever the animations change. 
+// This means that when the state is first initialized, the animations will start automatically due to the rebuild caused by addListener.
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
